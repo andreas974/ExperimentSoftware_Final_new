@@ -1,0 +1,1 @@
+java -Djava.policy=java.policy -jar ExperimentSoftware_Final.jar -c -server 127.0.0.1 -clientid client

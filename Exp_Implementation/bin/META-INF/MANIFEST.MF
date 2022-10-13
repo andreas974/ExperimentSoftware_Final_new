@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Main-Class: edu.kit.exp.impl.run
+Class-Path: trident-6.3.jar miglayout15-swing.jar bioplux.jar xuggle-xug
+ gler-5.4.jar JNative.jar logback-core-1.0.0.jar xAffect.jar comm.jar bi
+ oplux.jar JNative.jar xAffect.jar h2-1.3.176.jar jython-2.1.jar bridj-0
+ .6.2.jar eclipselink.jar trident-6.3.jar joda-time-2.2.jar commons-cli-
+ 1.1.jar swt-win64-3.6.2.jar slf4j-api-1.7.21.jar log4j-api-2.0-rc1.jar 
+ miglayout15-swing.jar log4j-core-2.0-rc1.jar logback-core-1.0.0.jar ste
+ elseries-3.9.30.jar xuggle-xuggler-5.4.jar logback-classic-1.0.0.jar we
+ bcam-capture-0.3.10.jar postgresql-9.2-1002.jdbc4.jar kit-iism-experime
+ nttool_newtry.jar javax.persistence_2.0.4.v201112161009.jar joda-time-2
+ .2.jar steelseries-3.9.30.jar h2-1.3.176.jar javax.persistence_2.0.4.v2
+ 01112161009.jar logback-classic-1.0.0.jar comm.jar jython-2.1.jar webca
+ m-capture-0.3.10.jar slf4j-api-1.7.21.jar commons-cli-1.1.jar joda-time
+ -2.2.jar eclipselink.jar postgresql-9.2-1002.jdbc4.jar bridj-0.6.2.jar 
+ miglayout15-swing.jar
+

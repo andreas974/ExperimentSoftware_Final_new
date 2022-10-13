@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Server" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="edu.kit.exp.impl.run" />
+    <module name="Human_vs_AI_Experiment" />
+    <option name="PROGRAM_PARAMETERS" value="-s" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

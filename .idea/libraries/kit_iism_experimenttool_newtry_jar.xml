@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="kit_iism_experimenttool_newtry_jar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/out/artifacts/kit_iism_experimenttool_newtry_jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/out/artifacts/kit_iism_experimenttool_newtry_jar" recursive="false" />
+  </library>
+</component>
