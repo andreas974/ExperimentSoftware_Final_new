@@ -6,7 +6,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.text.StyleConstants;
-import javax.swing.text.StyleContext;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.SimpleAttributeSet;
 
 /**
  * The Class QuestionnaireItemMultipleChoice represents an implementation of a QuestionnaireItem;
@@ -185,12 +186,18 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		System.out.println("MaxSize:" +text1.getMaximumSize());
 		System.out.println("MinSize:" +text1.getMinimumSize());
 		text1.setContentType("text/html");
-		text1.setText("Stimme<br>überhaupt<br>nicht zu");
+		text1.setText("Ich stimme<br>überhaupt<br>nicht zu<br><b>1<br>");
+
+		StyledDocument doc = text1.getStyledDocument();
+		SimpleAttributeSet center = new SimpleAttributeSet();
+		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+		doc.setParagraphAttributes(0, doc.getLength(), center, false);
+
 		text1.setFont(ANSWER_FONT);
 		text1.setBorder(BorderFactory.createLineBorder(Color.white, 2));
 		d.gridx = 1;
 		d.weightx = 0.5;
-		d.gridy = 0;
+		d.gridy = 1;
 		d.anchor = GridBagConstraints.WEST;
 		answerListPanel.add(text1, d);
 
@@ -200,13 +207,15 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text2, 100, 60);
 		text2.setFont(ANSWER_FONT);
 		text2.setContentType("text/html");
-		text2.setText("Stimme<br>nicht zu<br>\n");
-		text2.setAlignmentX(text1.TOP_ALIGNMENT);
-		text2.setAlignmentY(text1.TOP_ALIGNMENT);
+		text2.setText("<br><br><br><b>2<br>");
+		StyledDocument doc2 = text2.getStyledDocument();
+		doc2.setParagraphAttributes(0, doc.getLength(), center, false);
+		text2.setAlignmentX(text1.BOTTOM_ALIGNMENT);
+		text2.setAlignmentY(text1.BOTTOM_ALIGNMENT);
 		text2.setBorder(BorderFactory.createLineBorder(Color.white, 2));
 		d.gridx = 2;
 		d.weightx = 0.5;
-		d.gridy = 0;
+		d.gridy = 1;
 		d.anchor = GridBagConstraints.WEST;
 		answerListPanel.add(text2, d);
 
@@ -216,11 +225,13 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text3, 100, 60);
 		text3.setFont(ANSWER_FONT);
 		text3.setContentType("text/html");
-		text3.setText("Stimme eher<br>nicht zu<br> ");
+		text3.setText("<br><br><br><b>3<br>");
+		StyledDocument doc3 = text3.getStyledDocument();
+		doc3.setParagraphAttributes(0, doc.getLength(), center, false);
 		text3.setBorder(BorderFactory.createLineBorder(Color.white, 2));
 		d.gridx = 3;
 		d.weightx = 0.5;
-		d.gridy = 0;
+		d.gridy = 1;
 		d.anchor = GridBagConstraints.WEST;
 		answerListPanel.add(text3, d);
 
@@ -230,12 +241,14 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text4, 100, 60);
 		text4.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text4.setContentType("text/html");
-		text4.setText("Stimme weder<br>zu noch<br>lehne ab");
+		text4.setText("<br><br><br><b>4<br>");
+		StyledDocument doc4 = text4.getStyledDocument();
+		doc4.setParagraphAttributes(0, doc.getLength(), center, false);
 		text4.setBorder(BorderFactory.createLineBorder(Color.white, 2));
 		d.gridx = 4;
 		d.weightx = 0.5;
-		d.gridy = 0;
-		d.anchor = GridBagConstraints.WEST;
+		d.gridy = 1;
+		d.anchor = GridBagConstraints.SOUTH;
 		answerListPanel.add(text4, d);
 
 		//JTextArea text5 = new JTextArea("  5");
@@ -244,11 +257,13 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text5, 100, 60);
 		text5.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text5.setContentType("text/html");
-		text5.setText("Stimme eher<br>zu\n");
+		text5.setText("<br><br><br>5<br>");
+		StyledDocument doc5 = text5.getStyledDocument();
+		doc5.setParagraphAttributes(0, doc.getLength(), center, false);
 		text5.setBorder(BorderFactory.createLineBorder(Color.white, 2));
 		d.gridx = 5;
 		d.weightx = 0.5;
-		d.gridy = 0;
+		d.gridy = 1;
 		d.anchor = GridBagConstraints.WEST;
 		answerListPanel.add(text5, d);
 
@@ -258,12 +273,14 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text6, 100, 60);
 		text6.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text6.setContentType("text/html");
-		text6.setText("Stimme zu<br> <br> ");
+		text6.setText("<br><br><br><b>6<br>");
+		StyledDocument doc6 = text6.getStyledDocument();
+		doc6.setParagraphAttributes(0, doc.getLength(), center, false);
 		text6.setBorder(BorderFactory.createLineBorder(Color.white, 2));
 		text6.setAlignmentX(Component.CENTER_ALIGNMENT);
 		d.gridx = 6;
 		d.weightx = 0.5;
-		d.gridy = 0;
+		d.gridy = 1;
 		d.anchor = GridBagConstraints.WEST;
 		answerListPanel.add(text6, d);
 
@@ -273,17 +290,21 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text7, 100, 60);
 		text7.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text7.setContentType("text/html");
-		text7.setText("Stimme voll<br>und ganz zu<br> ");
+		text7.setText("Ich stimme <br> vollkommen zu<br><br><b>7<br>");
+		StyledDocument doc7 = text7.getStyledDocument();
+		SimpleAttributeSet center7 = new SimpleAttributeSet();
+		StyleConstants.setAlignment(center7, StyleConstants.ALIGN_CENTER);
+		doc7.setParagraphAttributes(0, doc.getLength(), center, false);
 		text7.setBorder(BorderFactory.createLineBorder(Color.white, 2));
 		d.gridx = 7;
 		d.weightx = 0.5;
-		d.gridy = 0;
+		d.gridy = 1;
 		d.anchor = GridBagConstraints.WEST;
 		answerListPanel.add(text7, d);
 		answerListPanel.setBackground(returnPanel.getBackground());
 
 		//ButtonGroup answerGroup = new ButtonGroup();
-		int j = 1;
+		int j = 2;
 		for (String anAnswerText : answerText) {
 
 			System.out.println(anAnswerText + ". j: " + j);
@@ -324,12 +345,11 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer6 = new JRadioButton("      ", false);
 				answer7 = new JRadioButton("      ", false);
 			} else {
-				answer1 = new JRadioButton(" 1", false);
-				//answer1.setAlignmentX(Component.CENTER_ALIGNMENT);
-				answer1.setBorder(oneline);
-				answer1.setHorizontalTextPosition(SwingConstants.LEFT);
-				answer1.setVerticalTextPosition(SwingConstants.TOP);
-				answer1.setVerticalAlignment(SwingConstants.TOP);
+				answer1 = new JRadioButton("1", false);
+				answer1.setAlignmentX(Component.CENTER_ALIGNMENT);
+				answer1.setHorizontalAlignment(SwingConstants.CENTER);
+				answer1.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer1.setVerticalTextPosition(JRadioButton.BOTTOM);
 				answer1.setForeground(Color.white);
 				if (j%2 != 0){
 					answer1.setBackground(Color.white);
@@ -340,15 +360,17 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 					answer1.setForeground(Color.white);
 					answer1.setBackground(Color.white);
 				}
-				d.anchor = GridBagConstraints.NORTHWEST;
+				d.anchor = GridBagConstraints.CENTER;
 				d.gridx = 1;
 				d.weightx = 0.5;
 				d.gridy = j;
 				answerGroup.add(answer1);
 				answerListPanel.add(answer1, d);
 				answer2 = new JRadioButton("  2", false);
-				answer2.setHorizontalTextPosition(SwingConstants.LEFT);
-				answer2.setVerticalTextPosition(SwingConstants.TOP);
+				answer2.setAlignmentX(Component.CENTER_ALIGNMENT);
+				answer2.setHorizontalAlignment(SwingConstants.CENTER);
+				answer2.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer2.setVerticalTextPosition(JRadioButton.BOTTOM);
 				if (j%2 != 0){
 					answer2.setBackground(Color.white);
 					answer2.setForeground(Color.white);
@@ -367,8 +389,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				d.gridy = j;
 				answerListPanel.add(answer2, d);
 				answer3 = new JRadioButton("  3", false);
-				answer3.setHorizontalTextPosition(SwingConstants.LEFT);
-				answer3.setVerticalTextPosition(SwingConstants.TOP);
+				answer3.setAlignmentX(Component.CENTER_ALIGNMENT);
+				answer3.setHorizontalAlignment(SwingConstants.CENTER);
+				answer3.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer3.setVerticalTextPosition(JRadioButton.BOTTOM);
 				if (j%2 != 0){
 					answer3.setBackground(Color.white);
 					answer3.setForeground(Color.white);
@@ -384,8 +408,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				d.gridy = j;
 				answerListPanel.add(answer3, d);
 				answer4 = new JRadioButton("  4", false);
-				answer4.setHorizontalTextPosition(SwingConstants.LEFT);
-				answer4.setVerticalTextPosition(SwingConstants.TOP);
+				answer4.setAlignmentX(Component.CENTER_ALIGNMENT);
+				answer4.setHorizontalAlignment(SwingConstants.CENTER);
+				answer4.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer4.setVerticalTextPosition(JRadioButton.BOTTOM);
 				if (j%2 != 0){
 					answer4.setBackground(Color.white);
 					answer4.setForeground(Color.white);
@@ -401,8 +427,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				d.gridy = j;
 				answerListPanel.add(answer4, d);
 				answer5 = new JRadioButton("  5", false);
-				answer5.setHorizontalTextPosition(SwingConstants.LEFT);
-				answer5.setVerticalTextPosition(SwingConstants.TOP);
+				answer5.setAlignmentX(Component.CENTER_ALIGNMENT);
+				answer5.setHorizontalAlignment(SwingConstants.CENTER);
+				answer5.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer5.setVerticalTextPosition(JRadioButton.BOTTOM);
 				if (j%2 != 0){
 					answer5.setBackground(Color.white);
 					answer5.setForeground(Color.white);
@@ -418,8 +446,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				d.gridy = j;
 				answerListPanel.add(answer5, d);
 				answer6 = new JRadioButton("  6", false);
-				answer6.setHorizontalTextPosition(SwingConstants.LEFT);
-				answer6.setVerticalTextPosition(SwingConstants.TOP);
+				answer6.setAlignmentX(Component.CENTER_ALIGNMENT);
+				answer6.setHorizontalAlignment(SwingConstants.CENTER);
+				answer6.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer6.setVerticalTextPosition(JRadioButton.BOTTOM);
 				if (j%2 != 0){
 					answer6.setBackground(Color.white);
 					answer6.setForeground(Color.white);
@@ -435,8 +465,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				d.gridy = j;
 				answerListPanel.add(answer6, d);
 				answer7 = new JRadioButton("  7", false);
-				answer7.setHorizontalTextPosition(SwingConstants.LEFT);
-				answer7.setVerticalTextPosition(SwingConstants.TOP);
+				answer7.setAlignmentX(Component.CENTER_ALIGNMENT);
+				answer7.setHorizontalAlignment(SwingConstants.CENTER);
+				answer7.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer7.setVerticalTextPosition(JRadioButton.BOTTOM);
 				if (j%2 != 0){
 					answer7.setBackground(Color.white);
 					answer7.setForeground(Color.white);

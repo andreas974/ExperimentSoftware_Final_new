@@ -380,7 +380,7 @@ public abstract class QuestionScreen extends Screen{
 		answerPanel.setBackground(Color.WHITE);
 		answerPanel.setLayout(new BorderLayout(0, 0));
 		answerPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		answerPanel.setPreferredSize(new Dimension(800, 550));
+		answerPanel.setPreferredSize(new Dimension(800, 500));
 		//answerPanel.setPreferredSize(new Dimension(1000, 400));
 		//answerPanel.setMaximumSize(answerPanel.getPreferredSize());
 		answerPanel.setMaximumSize(new Dimension(1200,1000));
