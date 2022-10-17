@@ -17,6 +17,17 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.setPostText("Sie haben den Fragebogen erfolgreich abgeschlossen.<br>Klicken Sie \"Weiter\", um das Experiment zu beenden.");
 		QuestionnaireMultipleChoice question;
 
+		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<i>Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.<br></i><b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
+		semantic.addAnswer("Unintelligent/Intelligent");
+		semantic.addAnswer("Inkompetent/Kompetent");
+		semantic.addAnswer("Unwissend/Klug");
+		semantic.addAnswer("Unangenehm/Angenehm");
+		semantic.addAnswer("Hart/Nett");
+		semantic.addAnswer("Unerfreulich/Erfreulich");
+		semantic.addAnswer("Mechanisch/Kreativ");
+		semantic.addAnswer("Starr/Lebendig");
+		semantic.addAnswer("Künstlich/Menschlich");
+		this.addQuestionnaireItem(semantic);
 
 		QuestionnaireLikert liker = new QuestionnaireLikert("<i>Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.<br></i><b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
 		liker.addAnswer("Ich mag den Wettbewerb.");

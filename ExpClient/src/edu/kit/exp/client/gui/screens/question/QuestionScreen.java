@@ -385,7 +385,7 @@ public abstract class QuestionScreen extends Screen{
 		//answerPanel.setMaximumSize(answerPanel.getPreferredSize());
 		answerPanel.setMaximumSize(new Dimension(1200,1000));
 		//answerPanel.setMinimumSize(new Dimension(1080,1000));
-		answerPanel.setMinimumSize(answerPanel.getPreferredSize());
+		answerPanel.setMinimumSize(new Dimension(300, 500));
 		answerPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		answerPanel.revalidate();
 		answerPanel.repaint();
