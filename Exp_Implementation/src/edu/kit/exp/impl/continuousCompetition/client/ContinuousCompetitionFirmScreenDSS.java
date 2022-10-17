@@ -108,6 +108,12 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
     protected JLabel DecisionSupportValueLabel;
     protected JLabel DecisionSupportUnitLabel;
 
+    protected JLabel space1;
+    protected JLabel space2;
+    protected JLabel space3;
+    protected JLabel space4;
+    protected JLabel space5;
+
 
     protected JLabel pFirmBDescriptionLabel;
     protected JLabel pFirmBValueLabel;
@@ -399,7 +405,7 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
         pFirmAValueLabel.setText(String.valueOf(df.format(pFirmA)));
         pFirmBValueLabel.setText(String.valueOf(df.format(pFirmB)));
         pFirmCValueLabel.setText(String.valueOf(df.format(pFirmC)));
-        DecisionSupportValueLabel.setText("n.A.");
+        DecisionSupportValueLabel.setText("keine Angabe");
     }
 
     // action listeners activated in discrete and practice setting - slider input triggers instant calculation of market data
@@ -665,7 +671,7 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
             pFirmA = marketUpdate.getaFirmA();
             pFirmB = marketUpdate.getaFirmB();
             pFirmC = marketUpdate.getaFirmC();
-            DecisionSupportValueLabel.setText("n.A.");
+            DecisionSupportValueLabel.setText("keine Angabe");
         } else {
             if (!practiceRound) {
                 if (myRole == FirmDescription.FirmA) {
@@ -844,7 +850,7 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
             pFirmBTextField.setText(String.valueOf(pFirmB));
             pFirmCSlider.setValue(pFirmC);
             pFirmCTextField.setText(String.valueOf(pFirmC));
-            DecisionSupportValueLabel.setText("n.A.");
+            DecisionSupportValueLabel.setText("keine Angabe");
         } else {
             if (!practiceRound) {
                 if (myRole == FirmDescription.FirmA) {
@@ -1098,7 +1104,7 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
         backgroundPanel.add(retailPricingPanel, c);
 
         decisionSupportPanel = new JPanel(new GridBagLayout());
-        decisionSupportPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Vorschlag des Algorithmus"));
+        decisionSupportPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Empfehlung des Algorithmus"));
         setPanelSize(decisionSupportPanel, widthRightSide, 270);
         createDecisionSupportPanel();
         c.insets = new Insets(5,0,0,0);
@@ -1442,24 +1448,77 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
 
         DecisionSupportLabel = createNewDecisionSupportLabel();
         c = gbcDescriptionColumn(c, pady);
-        c.gridx = 0;
-        c.gridy = 0;
+
+        if (myRole.equals(FirmDescription.FirmA)) {
+            DecisionSupportValueLabel = createNewRightSideValueLabel(COLOR_FIRM_A);
+            c.gridx = 0;
+            c.gridy = 1;
+        }
+        else {
+            DecisionSupportValueLabel = createNewRightSideValueLabel(COLOR_FIRM_B);
+            c.gridx = 0;
+            c.gridy = 7;
+        }
         decisionSupportPanel.add(DecisionSupportLabel, c);
 
-        //DecisionSupportValueLabel = createNewRightSideValueLabel(Color.orange);
-        DecisionSupportValueLabel = createNewRightSideValueLabel(COLOR_FIRM_E);
         c = gbcValueColumn(c, pady);
-        c.gridx = 1;
-        c.gridy = 0;
+        //DecisionSupportValueLabel = createNewRightSideValueLabel(Color.orange);
+        if (myRole.equals(FirmDescription.FirmA)) {
+            DecisionSupportValueLabel = createNewRightSideValueLabel(COLOR_FIRM_A);
+            c.gridx = 1;
+            c.gridy = 1;
+        }
+        else {
+            DecisionSupportValueLabel = createNewRightSideValueLabel(COLOR_FIRM_B);
+            c.gridx = 1;
+            c.gridy = 7;
+        }
+
         decisionSupportPanel.add(DecisionSupportValueLabel, c);
 
-        //DecisionSupportUnitLabel = createNewRightSideUnitLabel(Color.orange);
-        DecisionSupportUnitLabel = createNewRightSideUnitLabel(COLOR_FIRM_E);
-        DecisionSupportUnitLabel.setText("");
+        space1 = createNewRightSideUnitLabel(COLOR_FIRM_A);
+        space2 = createNewRightSideUnitLabel(COLOR_FIRM_A);
+        space3 = createNewRightSideUnitLabel(COLOR_FIRM_A);
+        space4 = createNewRightSideUnitLabel(COLOR_FIRM_A);
+        space5 = createNewRightSideUnitLabel(COLOR_FIRM_A);
+
+        /*//DecisionSupportUnitLabel = createNewRightSideUnitLabel(Color.orange);
+        if (myRole.equals(FirmDescription.FirmA)) {
+            DecisionSupportUnitLabel = createNewRightSideUnitLabel(COLOR_FIRM_A);
+        }
+        else {
+            DecisionSupportUnitLabel = createNewRightSideUnitLabel(COLOR_FIRM_B);
+        }
+        DecisionSupportUnitLabel.setText("");*/
+        space1.setText("");
         c = gbcUnitColumn(c, pady);
         c.gridx = 2;
-        c.gridy = 0;
-        decisionSupportPanel.add(DecisionSupportUnitLabel, c);
+        c.gridy = 2;
+        decisionSupportPanel.add(space1, c);
+
+        space2.setText("");
+        c = gbcUnitColumn(c, pady);
+        c.gridx = 2;
+        c.gridy = 3;
+        decisionSupportPanel.add(space2, c);
+
+        space3.setText("");
+        c = gbcUnitColumn(c, pady);
+        c.gridx = 2;
+        c.gridy = 4;
+        decisionSupportPanel.add(space3, c);
+
+        space4.setText("");
+        c = gbcUnitColumn(c, pady);
+        c.gridx = 2;
+        c.gridy = 5;
+        decisionSupportPanel.add(space4, c);
+
+        space5.setText("");
+        c = gbcUnitColumn(c, pady);
+        c.gridx = 2;
+        c.gridy = 6;
+        decisionSupportPanel.add(space5, c);
     }
 
     private void createPriceTextDisplayPanel() {
@@ -1949,8 +2008,16 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
     }
 
     private JLabel createNewDecisionSupportLabel() {
-        JLabel label = createNewRightSideDescriptionLabel(COLOR_FIRM_E);
-        label.setText("Empfehlung des Algorithmus:");
+        JLabel label;
+
+        if (myRole.equals(FirmDescription.FirmA)) {
+            label = createNewRightSideDescriptionLabel(COLOR_FIRM_A);
+            label.setText("Preisvorschlag für Firma A:");
+        }
+        else {
+            label = createNewRightSideDescriptionLabel(COLOR_FIRM_B);
+            label.setText("Preisvorschlag für Firma B");
+        }
         return label;
     }
 

@@ -281,7 +281,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 
 			LeftText = new JTextPane();
 			LeftText.setEditable(false);
-			setComponentSize(LeftText, 250, 30);
+			setComponentSize(LeftText, 280, 30);
 			LeftText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			LeftText.setContentType("text/html");
 			LeftText.setText("&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + part1);
@@ -455,7 +455,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 
 			RightText = new JTextPane();
 			RightText.setEditable(false);
-			setComponentSize(RightText, 250, 30);
+			setComponentSize(RightText, 280, 30);
 			RightText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			RightText.setContentType("text/html");
 			RightText.setText(part2);

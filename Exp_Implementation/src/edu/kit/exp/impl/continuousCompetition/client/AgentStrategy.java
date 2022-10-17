@@ -241,7 +241,7 @@ public class AgentStrategy {
 
             if (getState(marketUpdate) != actionsofotherfirm[countId - 1] || countId % 40 == 0 || countId == 2) {
                 Random random = new Random();
-                int randomUpdate = random.nextInt(6 + 1) + 1;
+                int randomUpdate = random.nextInt(4 + 1) + 1;
                 Thread.sleep(randomUpdate*500);
                 agentCore.updateAction(newAction);
 
