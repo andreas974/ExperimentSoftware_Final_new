@@ -1428,8 +1428,8 @@ public class AgentCoreWithGui extends AgentCore {
         slider.setMaximum(sliderMax);
         slider.setValue(sliderValue);
         slider.setPaintTicks(true);
-        slider.setMajorTickSpacing(2);
-        slider.setMinorTickSpacing(1);
+        slider.setMajorTickSpacing(10);
+        slider.setMinorTickSpacing(5);
         slider.setPaintLabels(true);
 
         slider.setMinimumSize(new Dimension(800, 50));
