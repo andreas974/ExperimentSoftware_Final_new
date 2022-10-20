@@ -597,6 +597,7 @@ public class AgentCoreWithGui extends AgentCore {
 
     private void setupDuopolyPanels() {
         retailPricingFirmCPanel.setVisible(false);
+        retailPricingFirmDPanel.setVisible(false);
 
         profitFirmCDescriptionChartDisplayLabel.setVisible(false);
         profitFirmCDescriptionLabel.setVisible(false);

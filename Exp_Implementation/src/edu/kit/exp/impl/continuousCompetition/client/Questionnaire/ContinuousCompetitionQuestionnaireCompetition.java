@@ -126,8 +126,5 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 		textInput = new QuestionnaireTextInput("Haben Sie weitere Anmerkungen zum Experiment?");
 		this.addQuestionnaireItem(textInput);
-
-		question = new QuestionnaireMultipleChoice("<span style=\"font-weight:normal\">Bob und John sind identisch in Bezug auf ihre körperlichen und geistigen Fähigkeiten. Die beiden erleiden Schiffbruch auf einer unbewohnten Insel, auf welcher Bananen die einzige Nahrung sind. 10 Bananen pro Tag fallen vor ihren Füßen auf den Boden, andere fallen ins Meer. Die beiden können so viele Bananen sammeln wie sie wollen, indem sie auf einen Baum klettern, die Bananen pflücken, bevor sie ins Meer fallen und dann auf einen Haufen werfen. Auf diese Weise pflückt Bob 7 Bananen pro Tag und John 3 pro Tag. Insgesamt gibt es also 20 Bananen pro Tag auf der Insel.<span style=\"font-weight:normal\"> <br> Wenn Sie über die Aufteilung der Bananen entscheiden könnten und gerecht sein möchten, welche der folgenden Aufteilungen würden Sie wählen?");
-		this.addQuestionnaireItem(question);
 	}
 }
