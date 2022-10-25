@@ -16,6 +16,65 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.setPreText("Klicken Sie \"Weiter\", um mit dem Fragebogen zum Experiment zu beginnen.");
 		this.setPostText("Sie haben den Fragebogen erfolgreich abgeschlossen.<br>Klicken Sie \"Weiter\", um das Experiment zu beenden.");
 
+		QuestionnaireMultipleChoiceKonow k1 = new QuestionnaireMultipleChoiceKonow("Bitte wählen Sie...");
+		k1.setQText("<p style=\"font-family: Tahoma; font-size: 12px\"; align=\"justify\">Bob und John sind identisch in Bezug auf ihre körperlichen und geistigen Fähigkeiten. Die beiden erleiden Schiffbruch auf einer unbewohnten Insel, auf welcher Bananen die einzige Nahrung sind. 10 Bananen pro Tag fallen vor ihren Füßen auf den Boden, andere fallen ins Meer. Die beiden können so viele Bananen sammeln wie sie wollen, indem sie auf einen Baum klettern, die Bananen pflücken, bevor sie ins Meer fallen und dann auf einen Haufen werfen. Auf diese Weise pflückt Bob 7 Bananen pro Tag und John 3 pro Tag. Insgesamt gibt es also 20 Bananen pro Tag auf der Insel. Wenn Sie über die Aufteilung der Bananen entscheiden könnten und gerecht sein möchten, welche der folgenden Aufteilungen würden Sie wählen?");
+		k1.addAnswer("<b>Bob bekommt 10 Bananen</b>, die 7, die er gepflückt hat, plus 3 die heruntergefallen sind, und <br><b>John bekommt 10</b>, die 3, die er gepflückt hat, plus 7 die heruntergefallen sind.");
+		k1.addAnswer("<b>Bob bekommt 12 Bananen</b>, die 7, die er gepflückt hat, plus 5 die heruntergefallen sind, und <br><b>John bekommt 8</b>, die 3, die er gepflückt hat, plus 5 die heruntergefallen sind.");
+		k1.addAnswer("<b>Bob bekommt 14 Bananen</b>, die 7, die er gepflückt hat, plus 7 die heruntergefallen sind, und <br><b>John bekommt 6</b>, die 3, die er gepflückt hat, plus 3 die heruntergefallen sind.");
+		this.addQuestionnaireItem(k1);
+
+		k1 = new QuestionnaireMultipleChoiceKonow("Bitte wählen Sie...");
+		k1.setQText("<p style=\"font-family: Tahoma; font-size: 12px\"; align=\"justify\">Smith und Jones arbeiten in identischen Bürojobs in einem großen Unternehmen, haben dieselbe Berufserfahrung und Betriebszugehörigkeit und haben in der Vergangenheit dieselben beruflichen Erfolge erzielt. Smith entscheidet sich dafür 40 Stunden pro Woche zu arbeiten und bekommt dafür 800 Euro Gehalt, während Jones sich dafür entscheidet 20 Stunden pro Woche zu arbeiten und dafür 400 Euro Gehalt bekommt. Bitte bewerten Sie diese Situation auf der folgenden Skala:");
+		k1.addAnswer("Sehr gerecht");
+		k1.addAnswer("Gerecht");
+		k1.addAnswer("Ungerecht");
+		k1.addAnswer("Sehr ungerecht");
+		this.addQuestionnaireItem(k1);
+
+		k1 = new QuestionnaireMultipleChoiceKonow("Bitte wählen Sie...");
+		k1.setQText("<p style=\"font-family: Tahoma; font-size: 12px\"; align=\"justify\">Bill und Sam managen einen kleinen Lebensmittelladen zu unterschiedlichen Zeiten an unterschiedlichen Tagen. Die Pflichten des Managers sind immer gleich, und die Tage und Zeiten, die jeder arbeitet, schwanken ziemlich zufällig, aber Bill arbeitet 40 Stunden pro Woche, während Sam 20 Stunden pro Woche arbeitet. Angenommen das Gehalt des Managers für eine 60-Stunden-Woche beträgt 1200 Euro. Welche der folgenden ist die gerechteste Aufteilung dieses Gehalts?");
+		k1.addAnswer("<span vertical-align: middle;>Bill erhält 600 Euro und Sam erhält 600 Euro.");
+		k1.addAnswer("Bill erhält 700 Euro und Sam erhält 500 Euro.");
+		k1.addAnswer("Bill erhält 800 Euro und Sam erhält 400 Euro");
+		this.addQuestionnaireItem(k1);
+
+		QuestionnaireSelect11 select11 = new QuestionnaireSelect11("Geistige Anforderung:<br><span style=\"font-weight:normal\">Wie viel geistige Anforderung war bei der Informationsaufnahme und bei der Informationsverarbeitung erforderlich (z.B. Denken, Entscheiden, Rechnen, Erinnern, Hinsehen, Suchen ...)? War die Aufgabe leicht oder anspruchsvoll, einfach oder komplex, erfordert sie hohe Genauigkeit oder ist sie fehlertolerant?</span>");
+		select11.addAnswer("Gering/Hoch");
+		this.addQuestionnaireItem(select11);
+
+		select11 = new QuestionnaireSelect11("Zeitliche Anforderung:<br><br><span style=\"font-weight:normal\">Wie viel Zeitdruck empfanden Sie hinsichtlich der Häufigkeit oder dem Takt mit dem die Aufgaben oder Aufgabenelemente auftraten? War die Aufgabe langsam und geruhsam oder schnell und hektisch?</span>");
+		select11.addAnswer("Gering/Hoch");
+		this.addQuestionnaireItem(select11);
+
+		select11 = new QuestionnaireSelect11("Leistung:<br><br><span style=\"font-weight:normal\">Wie erfolgreich haben Sie Ihrer Meinung nach die vom Versuchsleiter (oder Ihnen selbst) gesetzten Ziele erreicht? Wie zufrieden waren Sie mit Ihrer Leistung bei der Verfolgung dieser Ziele?</span>");
+		select11.addAnswer("Gering/Hoch");
+		this.addQuestionnaireItem(select11);
+
+		select11 = new QuestionnaireSelect11("Anstrengung:<br><br><span style=\"font-weight:normal\">Wie hart mussten Sie arbeiten, um Ihren Grad an Aufgabenerfüllung zu erreichen?</span>");
+		select11.addAnswer("Gering/Hoch");
+		this.addQuestionnaireItem(select11);
+
+		select11 = new QuestionnaireSelect11("Frustration:<br><br><span style=\"font-weight:normal\">Wie unsicher, entmutigt, irritiert, gestresst und verärgert (versus sicher, bestätigt, zufrieden, entspannt und zufrieden mit sich selbst) fühlten Sie sich während der Aufgabe?</span>");
+		select11.addAnswer("Gering/Hoch");
+		this.addQuestionnaireItem(select11);
+
+		QuestionnaireSelection select = new QuestionnaireSelection("Bitte vergleichen Sie im Folgenden die einzelnen Dimensionen Ihrer Beanspruchung und geben Sie für jedes Paar an, welche Dimension Sie jeweils als intensiver empfunden haben (ein Kreuz pro Zeile).");
+		select.addAnswer("Zeitliche Anforderung/Geistige Anforderung");
+		select.addAnswer("Leistung/Geistige Anforderung");
+		select.addAnswer("Zeitliche Anforderung/Anstrengung");
+		select.addAnswer("Leistung/Zeitliche Anforderung");
+		select.addAnswer("Frustration/Geistige Anforderung");
+		select.addAnswer("Anstrengung/Leistung");
+		select.addAnswer("Zeitliche Anforderung/Frustration");
+		select.addAnswer("Geistige Anforderung/Anstrengung");
+		select.addAnswer("Leistung/Frustration");
+		select.addAnswer("Frustration/Anstrengung");
+		this.addQuestionnaireItem(select);
+
+
+
+
+
 		QuestionnaireMultipleChoice question;
 		question = new QuestionnaireMultipleChoice("Welches Geschlecht haben Sie?");
 		question.addAnswer("männlich");

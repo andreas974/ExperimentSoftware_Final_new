@@ -1,6 +1,8 @@
 package edu.kit.exp.client.gui.screens.question.questionnaire;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -10,14 +12,19 @@ import java.util.ArrayList;
  *
  * @author tonda roder
  */
-public class QuestionnaireMultipleChoice extends QuestionnaireItem {
+public class QuestionnaireMultipleChoiceKonow extends QuestionnaireItem {
 
 	private static final Font ANSWER_FONT = new Font("Tahoma", Font.PLAIN, 17);
 	public static final Dimension PREFERRED_SIZE = new Dimension(300, 200);
 	public static final String SPLIT_SIGN = ";";
 
+
+
 	/** The answer text. */
 	private ArrayList<String> answerText;
+
+	/** The question text */
+	private String QText;
 
 	/** The answer option. */
 	private ArrayList<AbstractButton> answerOption;
@@ -55,14 +62,18 @@ public class QuestionnaireMultipleChoice extends QuestionnaireItem {
 	 *            A String which contains the question that will be displayed to
 	 *            the client.
 	 */
-	public QuestionnaireMultipleChoice(String question) {
+	public QuestionnaireMultipleChoiceKonow(String question) {
 		super(question);
 
 		answerText = new ArrayList<>();
 		selectMultiple = false;
 		Text = new ArrayList<>();
 	}
-
+	private void setComponentSize(JComponent comp, int width, int height) {
+		comp.setPreferredSize(new Dimension(width, height));
+		comp.setMaximumSize(new Dimension(width, height));
+		comp.setMinimumSize(new Dimension(width, height));
+	}
 
 	/**
 	 * This method provides the experimenter with the option to add possible
@@ -79,35 +90,74 @@ public class QuestionnaireMultipleChoice extends QuestionnaireItem {
 		Text.add(text);
 	}
 
+	public void setQText(String text){
+		QText = text;
+	}
+
 
 	@Override
 	public JPanel getAnswerPanel() {
+		Border blackline;
+		Border whiteline;
+		blackline = BorderFactory.createLineBorder(Color.black);
+		whiteline = BorderFactory.createLineBorder(Color.white);
 		JPanel returnPanel = basePanel;
 		returnPanel.setLayout(new BoxLayout(basePanel, BoxLayout.Y_AXIS));
+
+		JTextPane bob = new JTextPane();
+		bob.setEditable(false);
+		setComponentSize(bob, 800, 180);
+		bob.setContentType("text/html");
+		bob.setText(QText);
+		returnPanel.add(bob);
 
 		JPanel answerListPanel = new JPanel();
 		returnPanel.add(answerListPanel);
 		answerListPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		answerListPanel.setBackground(returnPanel.getBackground());
-		answerListPanel.setLayout(new BoxLayout(answerListPanel, BoxLayout.Y_AXIS));
+		answerListPanel.setLayout(new GridBagLayout());
+		GridBagConstraints d = new GridBagConstraints();
 		answerListPanel.setPreferredSize(PREFERRED_SIZE);
 
 		answerOption = new ArrayList<>();
 		AbstractButton answer;
+		JTextPane text;
 		ButtonGroup answerGroup = new ButtonGroup();
-
+		int i = 1;
 		for (String anAnswerText : answerText) {
 			if (selectMultiple) {
 				answer = new JCheckBox(anAnswerText, false);
 			} else {
-				answer = new JRadioButton(anAnswerText, false);
+				answer = new JRadioButton(String.valueOf(i), false);
+				setComponentSize(answer, 50, 65);
+				answer.setHorizontalTextPosition(SwingConstants.LEFT);
+				answer.setVerticalTextPosition(JRadioButton.CENTER);
+				answer.setBackground(Color.white);
+				answer.setForeground(Color.white);
+				d.gridx = 1;
+				d.gridy = i;
+				d.anchor = GridBagConstraints.WEST;
+				answerListPanel.add(answer, d);
+
+				text = new JTextPane();
+				text.setEditable(false);
+				setComponentSize(text, 680, 60);
+				text.setContentType("text/html");
+				text.setText("<p style=\"vertical-align:middle; font-family: Tahoma; font-size: 12px; \">"+anAnswerText);
+				text.setAlignmentY(Component.CENTER_ALIGNMENT);
+				text.setAlignmentX(Component.CENTER_ALIGNMENT);
+				d.gridx = 5;
+				d.gridy = i;
+				d.anchor = GridBagConstraints.WEST;
+				answerListPanel.add(text, d);
+				i++;
+
 				answerGroup.add(answer);
 			}
-			answer.setFont(ANSWER_FONT);
 			answerOption.add(answer);
+			answerListPanel.setBorder(blackline);
 
 			answer.setBackground(returnPanel.getBackground());
-			answerListPanel.add(answer);
 		}
 
 		return returnPanel;

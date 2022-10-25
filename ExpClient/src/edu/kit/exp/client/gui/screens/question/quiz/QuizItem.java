@@ -53,10 +53,10 @@ public abstract class QuizItem implements QuestionItem {
 	}
 
 	/**
-	 * This method gets the answer panel where a client can enter his answer.
-	 * 
-	 * @return the answer panel
-	 */
+     * This method gets the answer panel where a client can enter his answer.
+     *
+     * @return the answer panel
+     */
 	public abstract JPanel getAnswerPanel();
 
 	/**
