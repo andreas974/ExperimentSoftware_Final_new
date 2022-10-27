@@ -155,7 +155,6 @@ public class QuestionnaireMultipleChoiceKonow extends QuestionnaireItem {
 				answerGroup.add(answer);
 			}
 			answerOption.add(answer);
-			answerListPanel.setBorder(blackline);
 
 			answer.setBackground(returnPanel.getBackground());
 		}

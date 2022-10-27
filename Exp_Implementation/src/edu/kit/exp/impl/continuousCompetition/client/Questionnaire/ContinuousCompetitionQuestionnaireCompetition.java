@@ -16,6 +16,17 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.setPreText("Klicken Sie \"Weiter\", um mit dem Fragebogen zum Experiment zu beginnen.");
 		this.setPostText("Sie haben den Fragebogen erfolgreich abgeschlossen.<br>Klicken Sie \"Weiter\", um das Experiment zu beenden.");
 
+		QuestionnaireMurphy murphy = new QuestionnaireMurphy("Bitte geben Sie an");
+		murphy.addAnswer("85/85/85/85/85/85/85/85/85/85/76/68/59/50/41/33/24/15");
+		murphy.addAnswer("85/87/89/91/93/94/96/98/100/15/19/24/28/33/37/41/46/50");
+		murphy.addAnswer("50/54/59/63/68/72/76/81/85/100/98/96/94/93/91/89/87/85");
+		murphy.addAnswer("50/54/59/63/68/72/76/81/85/100/89/79/68/58/47/36/36/15");
+		murphy.addAnswer("100/94/88/81/75/69/63/56/50/50/57/63/69/75/81/88/94/100");
+		murphy.addAnswer("100/98/96/94/93/91/89/87/85/50/54/59/63/68/72/76/81/85/100");
+		this.addQuestionnaireItem(murphy);
+
+
+
 		QuestionnaireMultipleChoiceKonow k1 = new QuestionnaireMultipleChoiceKonow("Bitte wählen Sie...");
 		k1.setQText("<p style=\"font-family: Tahoma; font-size: 12px\"; align=\"justify\">Bob und John sind identisch in Bezug auf ihre körperlichen und geistigen Fähigkeiten. Die beiden erleiden Schiffbruch auf einer unbewohnten Insel, auf welcher Bananen die einzige Nahrung sind. 10 Bananen pro Tag fallen vor ihren Füßen auf den Boden, andere fallen ins Meer. Die beiden können so viele Bananen sammeln wie sie wollen, indem sie auf einen Baum klettern, die Bananen pflücken, bevor sie ins Meer fallen und dann auf einen Haufen werfen. Auf diese Weise pflückt Bob 7 Bananen pro Tag und John 3 pro Tag. Insgesamt gibt es also 20 Bananen pro Tag auf der Insel. Wenn Sie über die Aufteilung der Bananen entscheiden könnten und gerecht sein möchten, welche der folgenden Aufteilungen würden Sie wählen?");
 		k1.addAnswer("<b>Bob bekommt 10 Bananen</b>, die 7, die er gepflückt hat, plus 3 die heruntergefallen sind, und <br><b>John bekommt 10</b>, die 3, die er gepflückt hat, plus 7 die heruntergefallen sind.");
