@@ -27,6 +27,19 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 
 
+		QuestionnaireSelection select = new QuestionnaireSelection("Bitte vergleichen Sie im Folgenden die einzelnen Dimensionen Ihrer Beanspruchung und geben Sie für jedes Paar an, welche Dimension Sie jeweils als intensiver empfunden haben (ein Kreuz pro Zeile).");
+		select.addAnswer("Zeitliche Anforderung/Geistige Anforderung");
+		select.addAnswer("Leistung/Geistige Anforderung");
+		select.addAnswer("Zeitliche Anforderung/Anstrengung");
+		select.addAnswer("Leistung/Zeitliche Anforderung");
+		select.addAnswer("Frustration/Geistige Anforderung");
+		select.addAnswer("Anstrengung/Leistung");
+		select.addAnswer("Zeitliche Anforderung/Frustration");
+		select.addAnswer("Geistige Anforderung/Anstrengung");
+		select.addAnswer("Leistung/Frustration");
+		select.addAnswer("Frustration/Anstrengung");
+		this.addQuestionnaireItem(select);
+
 		QuestionnaireMultipleChoiceKonow k1 = new QuestionnaireMultipleChoiceKonow("Bitte wählen Sie...");
 		k1.setQText("<p style=\"font-family: Tahoma; font-size: 12px\"; align=\"justify\">Bob und John sind identisch in Bezug auf ihre körperlichen und geistigen Fähigkeiten. Die beiden erleiden Schiffbruch auf einer unbewohnten Insel, auf welcher Bananen die einzige Nahrung sind. 10 Bananen pro Tag fallen vor ihren Füßen auf den Boden, andere fallen ins Meer. Die beiden können so viele Bananen sammeln wie sie wollen, indem sie auf einen Baum klettern, die Bananen pflücken, bevor sie ins Meer fallen und dann auf einen Haufen werfen. Auf diese Weise pflückt Bob 7 Bananen pro Tag und John 3 pro Tag. Insgesamt gibt es also 20 Bananen pro Tag auf der Insel. Wenn Sie über die Aufteilung der Bananen entscheiden könnten und gerecht sein möchten, welche der folgenden Aufteilungen würden Sie wählen?");
 		k1.addAnswer("<b>Bob bekommt 10 Bananen</b>, die 7, die er gepflückt hat, plus 3 die heruntergefallen sind, und <br><b>John bekommt 10</b>, die 3, die er gepflückt hat, plus 7 die heruntergefallen sind.");
@@ -69,18 +82,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		select11.addAnswer("Gering/Hoch");
 		this.addQuestionnaireItem(select11);
 
-		QuestionnaireSelection select = new QuestionnaireSelection("Bitte vergleichen Sie im Folgenden die einzelnen Dimensionen Ihrer Beanspruchung und geben Sie für jedes Paar an, welche Dimension Sie jeweils als intensiver empfunden haben (ein Kreuz pro Zeile).");
-		select.addAnswer("Zeitliche Anforderung/Geistige Anforderung");
-		select.addAnswer("Leistung/Geistige Anforderung");
-		select.addAnswer("Zeitliche Anforderung/Anstrengung");
-		select.addAnswer("Leistung/Zeitliche Anforderung");
-		select.addAnswer("Frustration/Geistige Anforderung");
-		select.addAnswer("Anstrengung/Leistung");
-		select.addAnswer("Zeitliche Anforderung/Frustration");
-		select.addAnswer("Geistige Anforderung/Anstrengung");
-		select.addAnswer("Leistung/Frustration");
-		select.addAnswer("Frustration/Anstrengung");
-		this.addQuestionnaireItem(select);
+
 
 
 

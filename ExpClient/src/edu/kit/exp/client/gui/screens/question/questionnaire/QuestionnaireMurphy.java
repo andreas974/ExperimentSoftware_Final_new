@@ -339,6 +339,7 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 
 			inputField = new JSlider(JSlider.HORIZONTAL, 1, 9, 1);
+			inputField.setBackground(Color.white);
 		/*Dictionary map = new Hashtable();
 		map.put( new Integer(0), new JLabel("Gering") );
 		map.put( new Integer(11), new JLabel("Hoch") );*/

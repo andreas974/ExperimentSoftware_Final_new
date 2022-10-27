@@ -197,6 +197,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer1.setHorizontalAlignment(SwingConstants.CENTER);
 				answer1.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer1.setVerticalTextPosition(JRadioButton.TOP);
+				answer1.setBackground(Color.white);
 				d.anchor = GridBagConstraints.CENTER;
 				d.gridx = 1;
 				d.weightx = 0.5;
@@ -211,6 +212,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer2.setBorder(whiteline);
 				answer2.setAlignmentY(SwingConstants.TOP);
 				answer2.setBorder(oneline);
+				answer2.setBackground(Color.white);
 				answerGroup.add(answer2);
 				d.gridx = 2;
 				d.weightx = 0.5;
@@ -221,6 +223,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer3.setHorizontalAlignment(SwingConstants.CENTER);
 				answer3.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer3.setVerticalTextPosition(JRadioButton.TOP);
+				answer3.setBackground(Color.white);
 				answerGroup.add(answer3);
 				d.gridx = 3;
 				d.weightx = 0.5;
@@ -231,6 +234,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer4.setHorizontalAlignment(SwingConstants.CENTER);
 				answer4.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer4.setVerticalTextPosition(JRadioButton.TOP);
+				answer4.setBackground(Color.white);
 				answerGroup.add(answer4);
 				d.gridx = 4;
 				d.weightx = 0.5;
@@ -241,6 +245,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer5.setHorizontalAlignment(SwingConstants.CENTER);
 				answer5.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer5.setVerticalTextPosition(JRadioButton.TOP);
+				answer5.setBackground(Color.white);
 				answerGroup.add(answer5);
 				d.gridx = 5;
 				d.weightx = 0.5;
@@ -251,6 +256,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer6.setHorizontalAlignment(SwingConstants.CENTER);
 				answer6.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer6.setVerticalTextPosition(JRadioButton.TOP);
+				answer6.setBackground(Color.white);
 				answerGroup.add(answer6);
 				d.gridx = 6;
 				d.weightx = 0.5;
@@ -261,6 +267,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer7.setHorizontalAlignment(SwingConstants.CENTER);
 				answer7.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer7.setVerticalTextPosition(JRadioButton.TOP);
+				answer7.setBackground(Color.white);
 				answerGroup.add(answer7);
 				d.gridx = 7;
 				d.weightx = 0.5;
@@ -272,6 +279,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer8.setHorizontalAlignment(SwingConstants.CENTER);
 				answer8.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer8.setVerticalTextPosition(JRadioButton.TOP);
+				answer8.setBackground(Color.white);
 				answerGroup.add(answer8);
 				d.gridx = 8;
 				d.weightx = 0.5;
@@ -282,6 +290,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer9.setHorizontalAlignment(SwingConstants.CENTER);
 				answer9.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer9.setVerticalTextPosition(JRadioButton.TOP);
+				answer9.setBackground(Color.white);
 				answerGroup.add(answer9);
 				d.gridx = 9;
 				d.weightx = 0.5;
@@ -294,6 +303,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer10.setHorizontalAlignment(SwingConstants.CENTER);
 				answer10.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer10.setVerticalTextPosition(JRadioButton.TOP);
+				answer10.setBackground(Color.white);
 				answerGroup.add(answer10);
 				d.gridx = 10;
 				d.weightx = 0.5;
@@ -306,6 +316,7 @@ public class QuestionnaireSelect11 extends QuestionnaireItem {
 				answer11.setHorizontalAlignment(SwingConstants.CENTER);
 				answer11.setHorizontalTextPosition(SwingConstants.CENTER);
 				answer11.setVerticalTextPosition(JRadioButton.TOP);
+				answer11.setBackground(Color.white);
 				answerGroup.add(answer11);
 				d.gridx = 11;
 				d.weightx = 0.5;

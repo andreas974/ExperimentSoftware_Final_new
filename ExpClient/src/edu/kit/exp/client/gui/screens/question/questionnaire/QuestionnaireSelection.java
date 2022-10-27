@@ -170,7 +170,7 @@ public class QuestionnaireSelection extends QuestionnaireItem {
 		answerListPanel.setLayout(new GridBagLayout());
 		GridBagConstraints d = new GridBagConstraints();
 		answerListPanel.setBackground(Color.white);
-		setComponentSize(answerListPanel, 500,400);
+		setComponentSize(answerListPanel, 600,400);
 
 
 		//ButtonGroup answerGroup = new ButtonGroup();
@@ -184,13 +184,13 @@ public class QuestionnaireSelection extends QuestionnaireItem {
 
 			LeftText = new JTextPane();
 			LeftText.setEditable(false);
-			setComponentSize(LeftText, 150, 40);
+			setComponentSize(LeftText, 150, 25);
 			LeftText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			LeftText.setContentType("text/html");
-			LeftText.setText("&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + part1);
+			LeftText.setText(part1);
 			Color lightgrey = new Color(224,224,224);
-			LeftText.setAlignmentY(Component.TOP_ALIGNMENT);
-			LeftText.setBorder(whiteline);
+			LeftText.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+			LeftText.setAlignmentX(Component.RIGHT_ALIGNMENT);
 			if (j%2 != 0){
 				LeftText.setBackground(Color.white);
 			}
@@ -207,12 +207,11 @@ public class QuestionnaireSelection extends QuestionnaireItem {
 
 			RightText = new JTextPane();
 			RightText.setEditable(false);
-			setComponentSize(RightText, 150, 40);
+			setComponentSize(RightText, 150, 25);
 			RightText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			RightText.setContentType("text/html");
-			RightText.setText("&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + part2);
-			RightText.setAlignmentY(Component.TOP_ALIGNMENT);
-			RightText.setBorder(whiteline);
+			RightText.setText(part2);
+			RightText.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 			if (j%2 != 0){
 				RightText.setBackground(Color.white);
 			}
@@ -237,6 +236,7 @@ public class QuestionnaireSelection extends QuestionnaireItem {
 				answer1.setHorizontalAlignment(SwingConstants.CENTER);
 				answer1.setHorizontalTextPosition(SwingConstants.RIGHT);
 				answer1.setForeground(Color.white);
+				setComponentSize(answer1, 50, 25);
 				if (j%2 != 0){
 					answer1.setBackground(Color.white);
 					answer1.setForeground(Color.white);
@@ -255,7 +255,8 @@ public class QuestionnaireSelection extends QuestionnaireItem {
 				answer2 = new JRadioButton("2", false);
 				answer2.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer2.setHorizontalAlignment(SwingConstants.CENTER);
-				answer2.setHorizontalTextPosition(SwingConstants.RIGHT);
+				answer2.setVerticalTextPosition(SwingConstants.BOTTOM);
+				setComponentSize(answer2, 50, 25);
 				if (j%2 != 0){
 					answer2.setBackground(Color.white);
 					answer2.setForeground(Color.white);
