@@ -126,14 +126,14 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 		returnPanel.add(button);
 
 		JPanel test = new JPanel();
-		setComponentSize(test, 900, 2000);
+		setComponentSize(test, 900, 1000);
 		test.setBackground(Color.white);
 		scrollFrame = new JScrollPane(test);
-		test.setAutoscrolls(true);
+		test.setAutoscrolls(false);
 		setComponentSize(scrollFrame, 900, 550);
 		scrollFrame.setBorder(whiteline);
 		scrollFrame.setBackground(Color.white);
-		returnPanel.add(scrollFrame);
+
 
 		sliderAnswer1 = new ArrayList<>();
 		sliderAnswer2 = new ArrayList<>();
@@ -540,8 +540,16 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 			textAnswer2.add(inputField2);
 
 		}
-		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getValue());
+
+		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getMaximum());
+
+
+		returnPanel.add(scrollFrame);
+		scrollFrame.getVerticalScrollBar().setValue(scrollFrame.getVerticalScrollBar().getMinimum());
+		scrollFrame.getHorizontalScrollBar().setValue(scrollFrame.getVerticalScrollBar().getMinimum());
+
 		return returnPanel;
+
 	}
 
 	@Override
