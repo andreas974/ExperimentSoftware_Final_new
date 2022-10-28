@@ -51,7 +51,6 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 	private JTextField inputField2;
 
-	private JScrollPane scrollFrame;
 	private JTextPane text1;
 	private JTextPane text2;
 	private JTextPane text3;
@@ -116,7 +115,7 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(returnPanel, "<html><div width='400px'><p align='justify'>Bei den folgenden Fragen werden Sie bestimmen, wie Sie bestimmte Geldbeträge zwischen sich selbst und einer anderen Person aufteilen würden. Im Folgenden werden wir diese andere Person schlicht als „Jemand“ bezeichnen. Diese/r Jemand ist eine Person, welche Sie nicht kennen und gegenseitig anonym bleiben wird. All ihre Entscheidungen sind vollumfänglich vertraulich. Für jede der folgenden Fragen, geben Sie bitte jeweils diejenige Geldverteilung an, welche Sie am meisten bevorzugen würden.<br><br>" +
 								"Stellen Sie sich vor, dass Ihre Entscheidungen jeweils sowohl Geld für Sie wie auch für die andere Person generieren. Die Währung und Einheit der Geldverteilung ist dabei unerheblich.<br><br>" +
-								"Es gibt keine richtigen und falschen Antworten in dieser Aufgabe, es geht hier ausschließlich um persönliche Präferenzen. Wenn Sie Ihre Entscheidung gefällt haben, markieren Sie die entsprechende Position auf der Mittellinie und schreiben Sie die entsprechende Geldverteilung auf die Linien rechts. Sie können pro Frage nur eine Position markieren."
+								"Es gibt keine richtigen und falschen Antworten in dieser Aufgabe, es geht hier ausschließlich um persönliche Präferenzen. Wenn Sie Ihre Entscheidung gefällt haben, markieren Sie die entsprechende Position auf der Mittellinie und schreiben Sie die entsprechende Geldverteilung in die Kästen rechts. Sie können pro Frage nur eine Position markieren."
 								, "Erklärungen", JOptionPane.INFORMATION_MESSAGE);
 
 			}
@@ -125,14 +124,10 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 		button.setAlignmentX(Component.CENTER_ALIGNMENT);
 		returnPanel.add(button);
 
-		JPanel test = new JPanel();
+		/*JPanel test = new JPanel();
 		setComponentSize(test, 900, 1000);
 		test.setBackground(Color.white);
-		scrollFrame = new JScrollPane(test);
-		test.setAutoscrolls(false);
-		setComponentSize(scrollFrame, 900, 550);
-		scrollFrame.setBorder(whiteline);
-		scrollFrame.setBackground(Color.white);
+		test.setAutoscrolls(false);*/
 
 
 		sliderAnswer1 = new ArrayList<>();
@@ -150,7 +145,8 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 			JPanel answerListPanel = new JPanel();
 			answerListPanel.setLayout(new GridBagLayout());
-			test.add(answerListPanel);
+			//test.add(answerListPanel);
+			returnPanel.add(answerListPanel);
 			answerListPanel.setBackground(returnPanel.getBackground());
 			setComponentSize(answerListPanel, 800, 100);
 			GridBagConstraints d = new GridBagConstraints();
@@ -340,9 +336,9 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 			inputField = new JSlider(JSlider.HORIZONTAL, 1, 9, 1);
 			inputField.setBackground(Color.white);
-		/*Dictionary map = new Hashtable();
-		map.put( new Integer(0), new JLabel("Gering") );
-		map.put( new Integer(11), new JLabel("Hoch") );*/
+			/*Dictionary map = new Hashtable();
+			map.put( new Integer(0), new JLabel("Gering") );
+			map.put( new Integer(11), new JLabel("Hoch") );*/
 			inputField.setMajorTickSpacing(1);
 			inputField.setPaintTicks(false);
 			inputField.setSnapToTicks(true);
@@ -519,13 +515,13 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 			answerListPanel.add(inputField2, d);
 
 			JPanel box = new JPanel();
-			setComponentSize(box, 600, 25);
+			setComponentSize(box, 600, 40);
 			box.setOpaque(false);
 			box.setBackground(Color.white);
 			d.gridx = 0;
 			d.gridy = i + 3;
 			d.gridwidth = 12;
-			test.add(box);
+			returnPanel.add(box);
 
 			answerListPanel.setBorder(BorderFactory.createLineBorder(Color.gray, 2));
 
@@ -542,12 +538,21 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 		}
 
-		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getMaximum());
+		/*JScrollPane scrollFrame;
+		scrollFrame = new JScrollPane(test);
+
+		setComponentSize(scrollFrame, 900, 650);
+		scrollFrame.setBorder(whiteline);
+		scrollFrame.setBackground(Color.white);
 
 
-		returnPanel.add(scrollFrame);
-		scrollFrame.getVerticalScrollBar().setValue(scrollFrame.getVerticalScrollBar().getMinimum());
-		scrollFrame.getHorizontalScrollBar().setValue(scrollFrame.getVerticalScrollBar().getMinimum());
+
+		scrollFrame.getViewport().setViewPosition(new Point(0,0));
+		scrollFrame.scrollRectToVisible(new Rectangle(0, 0, 1, 1));
+		scrollFrame.getVerticalScrollBar().setValue(1);
+		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getValue());*/
+
+
 
 		return returnPanel;
 
