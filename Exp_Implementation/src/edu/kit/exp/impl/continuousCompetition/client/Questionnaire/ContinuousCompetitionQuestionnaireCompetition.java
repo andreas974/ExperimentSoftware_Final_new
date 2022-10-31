@@ -20,10 +20,6 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		Random r = new Random();
 		ArrayList<String> Answers;
 
-		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
-
-
-
 
 		QuestionnaireMultipleChoice question;
 		question = new QuestionnaireMultipleChoice("Welches Geschlecht haben Sie?");
@@ -140,7 +136,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben. \n");
 		this.addQuestionnaireItem(liker);
 
-
+		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
 		Answers = new ArrayList<>();
 		//For each Construct add one line with "/"-seperator
 		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unwissend/Klug");
