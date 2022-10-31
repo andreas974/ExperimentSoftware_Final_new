@@ -8,6 +8,8 @@ import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -39,6 +41,8 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 	private ArrayList<JTextField> textAnswer2;
 
 	private ArrayList<JSlider> answerOption;
+
+	public JScrollPane scrollFrame = new JScrollPane();
 
 	private String inputSlider2 = "";
 	private String inputSlider1 = "";
@@ -79,12 +83,15 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 	public QuestionnaireMurphy(String question) {
 		super(question);
 		answerText = new ArrayList<>();
+		scrollFrame.getVerticalScrollBar().setValue(0);
 	}
 
 	private void setComponentSize(JComponent comp, int width, int height) {
 		comp.setPreferredSize(new Dimension(width, height));
 		comp.setMaximumSize(new Dimension(width, height));
 		comp.setMinimumSize(new Dimension(width, height));
+		scrollFrame.getVerticalScrollBar().setValue(0);
+
 	}
 
 	/**
@@ -96,6 +103,7 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 	 */
 	public void addAnswer(String text) {
 		answerText.add(text);
+		scrollFrame.getVerticalScrollBar().setValue(0);
 	}
 
 
@@ -117,17 +125,21 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 								"Stellen Sie sich vor, dass Ihre Entscheidungen jeweils sowohl Geld für Sie wie auch für die andere Person generieren. Die Währung und Einheit der Geldverteilung ist dabei unerheblich.<br><br>" +
 								"Es gibt keine richtigen und falschen Antworten in dieser Aufgabe, es geht hier ausschließlich um persönliche Präferenzen. Wenn Sie Ihre Entscheidung gefällt haben, markieren Sie die entsprechende Position auf der Mittellinie und schreiben Sie die entsprechende Geldverteilung in die Kästen rechts. Sie können pro Frage nur eine Position markieren."
 								, "Erklärungen", JOptionPane.INFORMATION_MESSAGE);
-
 			}
 		});
 		button.setHorizontalAlignment(SwingConstants.CENTER);
 		button.setAlignmentX(Component.CENTER_ALIGNMENT);
 		returnPanel.add(button);
 
-		/*JPanel test = new JPanel();
-		setComponentSize(test, 900, 1000);
+		JPanel test = new JPanel();
+		setComponentSize(test, 800, 1000);
 		test.setBackground(Color.white);
-		test.setAutoscrolls(false);*/
+		test.setAutoscrolls(true);
+		scrollFrame = new JScrollPane(test);
+		setComponentSize(scrollFrame, 900, 400);
+		scrollFrame.setBorder(whiteline);
+		scrollFrame.setBackground(Color.white);
+		returnPanel.add(scrollFrame);
 
 
 		sliderAnswer1 = new ArrayList<>();
@@ -145,8 +157,7 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 			JPanel answerListPanel = new JPanel();
 			answerListPanel.setLayout(new GridBagLayout());
-			//test.add(answerListPanel);
-			returnPanel.add(answerListPanel);
+			//returnPanel.add(answerListPanel);
 			answerListPanel.setBackground(returnPanel.getBackground());
 			setComponentSize(answerListPanel, 800, 100);
 			GridBagConstraints d = new GridBagConstraints();
@@ -521,7 +532,8 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 			d.gridx = 0;
 			d.gridy = i + 3;
 			d.gridwidth = 12;
-			returnPanel.add(box);
+			//returnPanel.add(box);
+			test.add(box);
 
 			answerListPanel.setBorder(BorderFactory.createLineBorder(Color.gray, 2));
 
@@ -535,31 +547,46 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 			textAnswer1.add(inputField1);
 			textAnswer2.add(inputField2);
+			test.add(answerListPanel);
 
 		}
 
-		/*JScrollPane scrollFrame;
-		scrollFrame = new JScrollPane(test);
-
-		setComponentSize(scrollFrame, 900, 650);
-		scrollFrame.setBorder(whiteline);
-		scrollFrame.setBackground(Color.white);
+		final int[] x = {0};
 
 
+		returnPanel.addMouseMotionListener(new MouseMotionListener() {
+			@Override
+			public void mouseDragged(MouseEvent e) {
 
-		scrollFrame.getViewport().setViewPosition(new Point(0,0));
-		scrollFrame.scrollRectToVisible(new Rectangle(0, 0, 1, 1));
-		scrollFrame.getVerticalScrollBar().setValue(1);
-		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getValue());*/
+			}
+
+			@Override
+			public void mouseMoved(MouseEvent e) {
+			while (x[0] ==0) {
+				setVertical(0);
+				x[0]++;
+			}
+		}}
+		);
 
 
+
+		scrollFrame.getVerticalScrollBar().setValue(0);
 
 		return returnPanel;
 
+
+	}
+
+
+	public void setVertical(int i){
+		scrollFrame.getVerticalScrollBar().setValue(i);
 	}
 
 	@Override
 	public boolean isValid() {
+		scrollFrame.getVerticalScrollBar().setValue(0);
+		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getValue());
 
 		int j = 0;
 		for (int i=0; i < textAnswer2.size(); i++) {
@@ -650,6 +677,7 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 		}
 		for (int i=0; i < textAnswer2.size(); i++) {
 			if (sliderAnswer1.get(i).equals(textAnswer1.get(i).getText()) && (sliderAnswer2.get(i).equals(textAnswer2.get(i).getText())) && j==textAnswer2.size()) {
+
 				return true;
 			}
 		}
@@ -677,4 +705,8 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 		return answer;
 	}
 
+
+	public void setVertical(){
+		scrollFrame.getVerticalScrollBar().setValue(0);
+	}
 }

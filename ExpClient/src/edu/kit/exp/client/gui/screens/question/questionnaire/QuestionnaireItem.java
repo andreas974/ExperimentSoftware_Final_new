@@ -70,5 +70,6 @@ public abstract class QuestionnaireItem implements QuestionItem {
 
 	public abstract String getAnswer();
 
+	public void setVertical(){};
 
 }

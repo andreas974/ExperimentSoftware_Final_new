@@ -6,6 +6,8 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 /**
@@ -26,6 +28,9 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 	 * The answer text.
 	 */
 	private ArrayList<String> answerText;
+
+	public JScrollPane scrollFrame = new JScrollPane();
+
 
 	/**
 	 * The answer text.
@@ -78,6 +83,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		answerText = new ArrayList<>();
 		selectMultiple = false;
 		Text = new ArrayList<>();
+		scrollFrame.getVerticalScrollBar().setValue(0);
 	}
 
 	private void setComponentSize(JComponent comp, int width, int height) {
@@ -96,9 +102,11 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 
 	public void addAnswer(String text) {
 		answerText.add(text);
+		scrollFrame.getVerticalScrollBar().setValue(0);
 	}
 	public void addQuestion(String text) {
 		questionText.add(text);
+		scrollFrame.getVerticalScrollBar().setValue(0);
 	}
 
 	public void addText(String text) {
@@ -113,6 +121,21 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		basePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		basePanel.setBackground(Color.white);
 		JPanel returnPanel = basePanel;
+		Border blackline;
+		Border whiteline;
+		blackline = BorderFactory.createLineBorder(Color.black);
+		whiteline = BorderFactory.createLineBorder(Color.white);
+
+		JPanel test = new JPanel();
+		setComponentSize(test, 950, 800);
+		test.setBackground(Color.white);
+		test.setAutoscrolls(true);
+		scrollFrame = new JScrollPane(test);
+		setComponentSize(scrollFrame, 1100, 500);
+		scrollFrame.setBorder(whiteline);
+		scrollFrame.setBackground(Color.white);
+		returnPanel.add(scrollFrame);
+
 		returnPanel.setLayout(new BoxLayout(basePanel, BoxLayout.Y_AXIS));
 		int i = 0;
 		for (String ananswerText : answerText) {
@@ -121,10 +144,6 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		////GridBagConstraints c = new GridBagConstraints();
 		returnPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		returnPanel.setAlignmentY(Component.TOP_ALIGNMENT);
-		Border blackline;
-		Border whiteline;
-		blackline = BorderFactory.createLineBorder(Color.black);
-		whiteline = BorderFactory.createLineBorder(Color.white);
 		Border oneline;
 		oneline = BorderFactory.createMatteBorder(2,0,0,0,Color.lightGray);
 
@@ -507,6 +526,29 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		basePanel.add(options5, d);*/
 		returnPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		returnPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+		test.add(answerListPanel);
+
+		final int[] x = {0};
+
+
+		test.addMouseMotionListener(new MouseMotionListener() {
+			@Override
+			public void mouseDragged(MouseEvent e) {
+
+			}
+
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				while (x[0] ==0) {
+					setVertical(0);
+					x[0]++;
+				}
+			}}
+		);
+
+		scrollFrame.getVerticalScrollBar().setValue(0);
+		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getValue());
+
 		return returnPanel;
 	}
 
@@ -545,6 +587,10 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 			}
 		}
 		return answer;
+	}
+
+	public void setVertical(int i){
+		scrollFrame.getVerticalScrollBar().setValue(i);
 	}
 
 }
