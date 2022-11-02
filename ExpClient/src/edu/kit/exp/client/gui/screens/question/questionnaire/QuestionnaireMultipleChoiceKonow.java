@@ -141,7 +141,7 @@ public class QuestionnaireMultipleChoiceKonow extends QuestionnaireItem {
 
 				text = new JTextPane();
 				text.setEditable(false);
-				setComponentSize(text, 680, 60);
+				setComponentSize(text, 750, 60);
 				text.setContentType("text/html");
 				text.setText("<p style=\"vertical-align:middle; font-family: Tahoma; font-size: 12px; \">"+anAnswerText);
 				text.setAlignmentY(Component.CENTER_ALIGNMENT);

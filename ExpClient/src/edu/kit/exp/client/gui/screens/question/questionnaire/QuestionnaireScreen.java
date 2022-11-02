@@ -14,7 +14,7 @@ public class QuestionnaireScreen extends QuestionScreen {
 	private static final String TITLE_TEXT = "Fragebogen";
 	private static final String PRE_TEXT = "Klicken Sie den Button, um mit dem Fragebogen zu starten.";
 	private static final String POST_TEXT = "Sie haben den Fragebogen abgeschlossen. Klicken Sie den Button, um das Experiment zu beenden.";
-	private static final String WRONG_ANSWER_TEXT = "Wert ungültig";
+	private static final String WRONG_ANSWER_TEXT = "Bitte überprüfen Sie Ihre Eingabe.";
 
 	/** The current questionnaire. */
 	private QuestionnaireItem currentQuestionnaire;
@@ -94,7 +94,7 @@ public class QuestionnaireScreen extends QuestionScreen {
 	}
 
 	private void receiveWrongAnswer() {
-		JDialog dialog = new JOptionPane(wrongAnswerText, JOptionPane.ERROR_MESSAGE, JOptionPane.DEFAULT_OPTION).createDialog("Advise");
+		JDialog dialog = new JOptionPane(wrongAnswerText, JOptionPane.ERROR_MESSAGE, JOptionPane.DEFAULT_OPTION).createDialog("Hinweis");
 		dialog.setLocationRelativeTo(this);
 		dialog.setAlwaysOnTop(true);
 		dialog.setVisible(true);
