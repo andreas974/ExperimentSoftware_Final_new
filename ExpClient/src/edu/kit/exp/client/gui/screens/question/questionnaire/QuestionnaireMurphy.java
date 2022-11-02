@@ -586,7 +586,6 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 	@Override
 	public boolean isValid() {
 		scrollFrame.getVerticalScrollBar().setValue(0);
-		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getValue());
 
 		int j = 0;
 		for (int i=0; i < textAnswer2.size(); i++) {
