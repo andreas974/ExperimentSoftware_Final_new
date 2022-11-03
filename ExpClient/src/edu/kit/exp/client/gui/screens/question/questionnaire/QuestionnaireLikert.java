@@ -180,9 +180,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		//JTextArea text1 = new JTextArea("  1");
 		JTextPane text1 = new JTextPane();
 		text1.setEditable(false);
-		setComponentSize(text1, 100, 80);
+		setComponentSize(text1, 100, 110);
 		text1.setContentType("text/html");
-		text1.setText("Ich stimme<br>überhaupt<br>nicht zu<br><b>1<br>");
+		text1.setText("<p style='font-family: Tahoma; font-size: 10px'><b>Ich stimme<br>überhaupt<br>nicht zu<br><br><b>1<br>");
 
 		StyledDocument doc = text1.getStyledDocument();
 		SimpleAttributeSet center = new SimpleAttributeSet();
@@ -200,10 +200,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		//JTextArea text2 = new JTextArea("  2");
 		JTextPane text2 = new JTextPane();
 		text2.setEditable(false);
-		setComponentSize(text2, 100, 80);
+		setComponentSize(text2, 100, 110);
 		text2.setFont(ANSWER_FONT);
 		text2.setContentType("text/html");
-		text2.setText("<br><br><br><b>2<br>");
+		text2.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>2<br>");
 		StyledDocument doc2 = text2.getStyledDocument();
 		doc2.setParagraphAttributes(0, doc.getLength(), center, false);
 		text2.setAlignmentX(text1.BOTTOM_ALIGNMENT);
@@ -218,10 +218,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		//JTextArea text3 = new JTextArea("  3");
 		JTextPane text3 = new JTextPane();
 		text3.setEditable(false);
-		setComponentSize(text3, 100, 80);
+		setComponentSize(text3, 100, 110);
 		text3.setFont(ANSWER_FONT);
 		text3.setContentType("text/html");
-		text3.setText("<br><br><br><b>3<br>");
+		text3.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>3<br>");
 		StyledDocument doc3 = text3.getStyledDocument();
 		doc3.setParagraphAttributes(0, doc.getLength(), center, false);
 		text3.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -234,10 +234,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		//JTextArea text4 = new JTextArea("  4");
 		JTextPane text4 = new JTextPane();
 		text4.setEditable(false);
-		setComponentSize(text4, 100, 80);
+		setComponentSize(text4, 100, 110);
 		text4.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text4.setContentType("text/html");
-		text4.setText("<br><br><br><b>4<br>");
+		text4.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>4<br>");
 		StyledDocument doc4 = text4.getStyledDocument();
 		doc4.setParagraphAttributes(0, doc.getLength(), center, false);
 		text4.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -250,10 +250,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		//JTextArea text5 = new JTextArea("  5");
 		JTextPane text5 = new JTextPane();
 		text5.setEditable(false);
-		setComponentSize(text5, 100, 80);
+		setComponentSize(text5, 100, 110);
 		text5.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text5.setContentType("text/html");
-		text5.setText("<br><br><br><b>5<br>");
+		text5.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>5<br>");
 		StyledDocument doc5 = text5.getStyledDocument();
 		doc5.setParagraphAttributes(0, doc.getLength(), center, false);
 		text5.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -266,10 +266,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		//JTextArea text6 = new JTextArea("  6");
 		JTextPane text6 = new JTextPane();
 		text6.setEditable(false);
-		setComponentSize(text6, 100, 80);
+		setComponentSize(text6, 100, 110);
 		text6.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text6.setContentType("text/html");
-		text6.setText("<br><br><br><b>6<br>");
+		text6.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>6<br>");
 		StyledDocument doc6 = text6.getStyledDocument();
 		doc6.setParagraphAttributes(0, doc.getLength(), center, false);
 		text6.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -283,10 +283,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		//JTextArea text7 = new JTextArea("  7");
 		JTextPane text7 = new JTextPane();
 		text7.setEditable(false);
-		setComponentSize(text7, 100, 80);
+		setComponentSize(text7, 100, 110);
 		text7.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text7.setContentType("text/html");
-		text7.setText("Ich stimme <br> vollkommen zu<br><br><b>7<br>");
+		text7.setText("<p style='font-family: Tahoma; font-size: 10px'><b>Ich stimme <br> vollkommen zu<br><br><b>7<br>");
 		StyledDocument doc7 = text7.getStyledDocument();
 		SimpleAttributeSet center7 = new SimpleAttributeSet();
 		StyleConstants.setAlignment(center7, StyleConstants.ALIGN_CENTER);
@@ -311,7 +311,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 			setComponentSize(QuestionText, 500, 50);
 			QuestionText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			QuestionText.setContentType("text/html");
-			QuestionText.setText(anAnswerText);
+			QuestionText.setText("<p style='font-family: Tahoma; font-size: 10px'>" + anAnswerText + "<br>");
 			Color lightgrey = new Color(224,224,224);
 			QuestionText.setBorder(whiteline);
 			QuestionText.setAlignmentY(JTextPane.BOTTOM_ALIGNMENT);

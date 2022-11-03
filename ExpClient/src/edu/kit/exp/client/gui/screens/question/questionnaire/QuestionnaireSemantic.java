@@ -127,7 +127,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		whiteline = BorderFactory.createLineBorder(Color.white);
 
 		JPanel test = new JPanel();
-		setComponentSize(test, 950, 800);
+		setComponentSize(test, 950, 1000);
 		test.setBackground(Color.white);
 		test.setAutoscrolls(true);
 		scrollFrame = new JScrollPane(test);
@@ -287,6 +287,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		answerListPanel.add(text7, d);
 		answerListPanel.setBackground(returnPanel.getBackground());
 
+		int y = 1;
 
 
 		//ButtonGroup answerGroup = new ButtonGroup();
@@ -470,6 +471,20 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				d.gridy = j;
 				answerListPanel.add(answer7, d);
 				answerListPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+				if (y%3==0){
+					JPanel box = new JPanel();
+					setComponentSize(box, 600, 20);
+					box.setOpaque(false);
+					box.setBackground(Color.white);
+					d.gridx = 0;
+					d.gridy = j + 1;
+					d.gridwidth = 8;
+					//returnPanel.add(box);
+					answerListPanel.add(box, d);
+					j++;
+				}
+				d.gridwidth=1;
 			}
 
 			RightText = new JTextPane();
@@ -488,7 +503,11 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 			}
 			d.gridx = 8;
 			d.weightx = 0.5;
-			d.gridy = j;
+			d.gridy =j;
+			if (y%3==0){
+				d.gridy = j-1;
+			}
+			y++;
 			d.anchor = GridBagConstraints.WEST;
 			//questions.add(QuestionText);
 

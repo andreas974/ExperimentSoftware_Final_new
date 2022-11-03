@@ -20,6 +20,42 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		Random r = new Random();
 		ArrayList<String> Answers;
 
+		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenübers im Experiment empfand ich als...");
+		Answers = new ArrayList<>();
+		//For each Construct add one line with "/"-seperator
+		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unwissend/Klug");
+		Answers.add("Unangenehm/Angenehm&Hart/Nett&Unerfreulich/Erfreulich");
+		Answers.add("Mechanisch/Kreativ&Starr/Lebendig&Künstlich/Menschlich");
+		Answers.add("Schwach/Stark&Gefügig/Dominant&Unsicher/Selbstbewusst");
+		Answers.add("Unverlässlich/Verlässlich&Nicht vertrauenswürdig/Vertrauenswürdig&Unzuverlässig/Zuverlässig");
+		while (Answers.size()>0){
+			int randomAnswer = r.nextInt(Answers.size());
+			String[] parts = Answers.get(randomAnswer).split("&");
+			for (int i = 0; i<parts.length; i++){
+				semantic.addAnswer(parts[i]);
+			}
+			Answers.remove(Answers.get(randomAnswer));
+		}
+
+		/*semantic.addAnswer("Unintelligent/Intelligent");
+		semantic.addAnswer("Inkompetent/Kompetent");
+		semantic.addAnswer("Unwissend/Klug");
+		semantic.addAnswer("Unangenehm/Angenehm");
+		semantic.addAnswer("Hart/Nett");
+		semantic.addAnswer("Unerfreulich/Erfreulich");
+		semantic.addAnswer("Mechanisch/Kreativ");
+		semantic.addAnswer("Starr/Lebendig");
+		semantic.addAnswer("Künstlich/Menschlich");
+		//this.addQuestionnaireItem(semantic);
+
+		//semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
+		semantic.addAnswer("Schwach/Stark");
+		semantic.addAnswer("Gefügig/Dominant");
+		semantic.addAnswer("Unsicher/Selbstbewusst");
+		semantic.addAnswer("Unverlässlich/Verlässlich");
+		semantic.addAnswer("Nicht vertrauenswürdig/Vertrauenswürdig");
+		semantic.addAnswer("Unzuverlässig/Zuverlässig");*/
+		this.addQuestionnaireItem(semantic);
 
 		QuestionnaireMultipleChoice question;
 		question = new QuestionnaireMultipleChoice("Welches Geschlecht haben Sie?");
@@ -57,7 +93,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 
 		QuestionnaireLikert liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
-		//Random Order of Constructs
+		/*//Random Order of Constructs
 		Answers = new ArrayList<>();
 		//For each Construct add one line with "/"-seperator
 		Answers.add("Ich mag den Wettbewerb./Ich genieße es, gegen Andere anzutreten./Ich versuche oft, andere zu übertrumpfen.");
@@ -73,23 +109,23 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 				liker.addAnswer(parts[i]);
 			}
 			Answers.remove(Answers.get(randomAnswer));
-		}
-		/*liker.addAnswer("Ich mag den Wettbewerb.");
-		liker.addAnswer("Ich genieße es, gegen Andere anzutreten.");
+		}*/
+		liker.addAnswer("Grundsätzlich mag ich es, mich im Wettbewerb mit anderen zu befinden.");
+		liker.addAnswer("Ich mag es, gegen andere anzutreten.");
 		liker.addAnswer("Ich versuche oft, andere zu übertrumpfen.");
 
-		liker.addAnswer("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf mich.");
+		liker.addAnswer("Im Wettbewerb zu verlieren hat kaum Auswirkungen auf mich.");
 		liker.addAnswer("Ich bin jemand, der gerne gewinnt und es hasst zu verlieren.");
 
-		liker.addAnswer("Mein Ziel im Experiment war, besser als mein Gegenüber abzuschneiden.");
-		liker.addAnswer("Mein Ziel im Experiment war, den höchstmöglichen Gesamtgewinn zu erzielen.");*/
+		liker.addAnswer("Mein Ziel im Experiment war besser als mein Gegenüber abzuschneiden.");
+		liker.addAnswer("Mein Ziel im Experiment war den höchstmöglichen Gesamtgewinn zu erzielen.");
 		this.addQuestionnaireItem(liker);
 
 		QuestionnaireTextInput textInput = new QuestionnaireTextInput("Wie würden Sie Ihre Strategie in eigenen Worten beschreiben?");
 		this.addQuestionnaireItem(textInput);
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen über Ihren Gegenüber zustimmen.");
-		Answers = new ArrayList<>();
+		/*Answers = new ArrayList<>();
 		Answers.add("Mein Gegenüber mag den Wettbewerb./Mein Gegenüber genießt es, gegen Andere anzutreten./Mein Gegenüber versuchte oft, mich zu übertrumpfen.");
 		Answers.add("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf meinen Gegenüber./Mein Gegenüber ist jemand, der gerne gewinnt und es hasst zu verlieren.");
 		Answers.add("Das Ziel meines Gegenübers im Experiment war, besser als ich abzuschneiden./Das Ziel meines Gegenübers im Experiment war, den höchstmöglichen Gesamtgewinn zu erzielen.");
@@ -100,17 +136,17 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 				liker.addAnswer(parts[i]);
 			}
 			order.remove(0);
-		}
-		/*
-		liker.addAnswer("Mein Gegenüber mag den Wettbewerb.");
-		liker.addAnswer("Mein Gegenüber genießt es, gegen Andere anzutreten.");
+		}*/
+
+		liker.addAnswer("Mein Gegenüber mag es, sich im Wettbewerb mit anderen zu befinden..");
+		liker.addAnswer("Mein Gegenüber mag es, gegen andere anzutreten.");
 		liker.addAnswer("Mein Gegenüber versuchte oft, mich zu übertrumpfen.");
 
-		liker.addAnswer("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf meinen Gegenüber.");
+		liker.addAnswer("Im Wettbewerb zu verlieren hat kaum Auswirkungen auf meinen Gegenüber.");
 		liker.addAnswer("Mein Gegenüber ist jemand, der gerne gewinnt und es hasst zu verlieren.");
 
-		liker.addAnswer("Das Ziel meines Gegenübers im Experiment war, besser als ich abzuschneiden.");
-		liker.addAnswer("Das Ziel meines Gegenübers im Experiment war, den höchstmöglichen Gesamtgewinn zu erzielen.");*/
+		liker.addAnswer("Das Ziel meines Gegenübers im Experiment war besser als ich abzuschneiden.");
+		liker.addAnswer("Das Ziel meines Gegenübers im Experiment war den höchstmöglichen Gesamtgewinn zu erzielen.");
 		this.addQuestionnaireItem(liker);
 
 		textInput = new QuestionnaireTextInput("Wie würden Sie die Strategie Ihres Gegenübers in eigenen Worten beschreiben?");
@@ -136,42 +172,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben. \n");
 		this.addQuestionnaireItem(liker);
 
-		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenübers im Experiment empfand ich als...");
-		Answers = new ArrayList<>();
-		//For each Construct add one line with "/"-seperator
-		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unwissend/Klug");
-		Answers.add("Unangenehm/Angenehm&Hart/Nett&Unerfreulich/Erfreulich");
-		Answers.add("Mechanisch/Kreativ&Starr/Lebendig&Künstlich/Menschlich");
-		Answers.add("Schwach/Stark&Gefügig/Dominant&Unsicher/Selbstbewusst");
-		Answers.add("Unverlässlich/Verlässlich&Nicht vertrauenswürdig/Vertrauenswürdig&Unzuverlässig/Zuverlässig");
-		while (Answers.size()>0){
-			int randomAnswer = r.nextInt(Answers.size());
-			String[] parts = Answers.get(randomAnswer).split("&");
-			for (int i = 0; i<parts.length; i++){
-				semantic.addAnswer(parts[i]);
-			}
-			Answers.remove(Answers.get(randomAnswer));
-		}
 
-		/*semantic.addAnswer("Unintelligent/Intelligent");
-		semantic.addAnswer("Inkompetent/Kompetent");
-		semantic.addAnswer("Unwissend/Klug");
-		semantic.addAnswer("Unangenehm/Angenehm");
-		semantic.addAnswer("Hart/Nett");
-		semantic.addAnswer("Unerfreulich/Erfreulich");
-		semantic.addAnswer("Mechanisch/Kreativ");
-		semantic.addAnswer("Starr/Lebendig");
-		semantic.addAnswer("Künstlich/Menschlich");
-		//this.addQuestionnaireItem(semantic);
-
-		//semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
-		semantic.addAnswer("Schwach/Stark");
-		semantic.addAnswer("Gefügig/Dominant");
-		semantic.addAnswer("Unsicher/Selbstbewusst");
-		semantic.addAnswer("Unverlässlich/Verlässlich");
-		semantic.addAnswer("Nicht vertrauenswürdig/Vertrauenswürdig");
-		semantic.addAnswer("Unzuverlässig/Zuverlässig");*/
-		this.addQuestionnaireItem(semantic);
 
 		QuestionnaireSelect11 select11 = new QuestionnaireSelect11("Geistige Anforderung:<br><span style=\"font-weight:normal\">Wie viel geistige Anforderung war bei der Informationsaufnahme und bei der Informationsverarbeitung erforderlich (z.B. Denken, Entscheiden, Rechnen, Erinnern, Hinsehen, Suchen ...)? War die Aufgabe leicht oder anspruchsvoll, einfach oder komplex, erfordert sie hohe Genauigkeit oder ist sie fehlertolerant?</span>");
 		select11.addAnswer("Gering/Hoch");

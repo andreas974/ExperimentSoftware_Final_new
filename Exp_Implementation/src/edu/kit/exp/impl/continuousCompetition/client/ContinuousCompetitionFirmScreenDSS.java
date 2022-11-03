@@ -405,7 +405,8 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
         pFirmAValueLabel.setText(String.valueOf(df.format(pFirmA)));
         pFirmBValueLabel.setText(String.valueOf(df.format(pFirmB)));
         pFirmCValueLabel.setText(String.valueOf(df.format(pFirmC)));
-        DecisionSupportValueLabel.setText("keine Angabe");
+        //DecisionSupportValueLabel.setText("keine Angabe");
+
     }
 
     // action listeners activated in discrete and practice setting - slider input triggers instant calculation of market data
@@ -420,6 +421,9 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
                     pFirmATextField.setText(String.valueOf(pFirmA));
                     pFirmAValueLabel.setText(String.valueOf(df.format(pFirmA)));
                     log4j.trace("SliderChangeListener: " + pFirmA);
+                    if (myRole == FirmDescription.FirmB) {
+                        DecisionSupportValueLabel.setText(String.valueOf(df.format(getMaxActionIndex(pFirmA)*5)));
+                    }
                     calculateDiscreteRoundMarketData();
                 }
             }
@@ -442,6 +446,9 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
                     pFirmBTextField.setText(String.valueOf(pFirmB));
                     pFirmBValueLabel.setText(String.valueOf(df.format(pFirmB)));
                     calculateDiscreteRoundMarketData();
+                    if (myRole == FirmDescription.FirmA) {
+                        DecisionSupportValueLabel.setText(String.valueOf(df.format(getMaxActionIndex(pFirmB)*5)));
+                    }
                 }
             }
         });
@@ -671,7 +678,7 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
             pFirmA = marketUpdate.getaFirmA();
             pFirmB = marketUpdate.getaFirmB();
             pFirmC = marketUpdate.getaFirmC();
-            DecisionSupportValueLabel.setText("keine Angabe");
+            //DecisionSupportValueLabel.setText(String.valueOf(df.format(getMaxActionIndex(0)*5)));
         } else {
             if (!practiceRound) {
                 if (myRole == FirmDescription.FirmA) {
@@ -850,7 +857,8 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
             pFirmBTextField.setText(String.valueOf(pFirmB));
             pFirmCSlider.setValue(pFirmC);
             pFirmCTextField.setText(String.valueOf(pFirmC));
-            DecisionSupportValueLabel.setText("keine Angabe");
+            DecisionSupportValueLabel.setText(String.valueOf(sdf.format(getMaxActionIndex(0)*5)));
+
         } else {
             if (!practiceRound) {
                 if (myRole == FirmDescription.FirmA) {
