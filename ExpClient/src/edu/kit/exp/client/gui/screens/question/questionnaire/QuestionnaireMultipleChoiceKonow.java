@@ -134,6 +134,7 @@ public class QuestionnaireMultipleChoiceKonow extends QuestionnaireItem {
 				answer.setVerticalTextPosition(JRadioButton.CENTER);
 				answer.setBackground(Color.white);
 				answer.setForeground(Color.white);
+				answer.setFocusable(false);
 				d.gridx = 1;
 				d.gridy = i;
 				d.anchor = GridBagConstraints.WEST;

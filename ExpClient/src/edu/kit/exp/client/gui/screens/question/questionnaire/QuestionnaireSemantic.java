@@ -127,11 +127,11 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		whiteline = BorderFactory.createLineBorder(Color.white);
 
 		JPanel test = new JPanel();
-		setComponentSize(test, 950, 1000);
+		setComponentSize(test, 950, 700);
 		test.setBackground(Color.white);
 		test.setAutoscrolls(true);
 		scrollFrame = new JScrollPane(test);
-		setComponentSize(scrollFrame, 1100, 500);
+		setComponentSize(scrollFrame, 1100, 450);
 		scrollFrame.setBorder(whiteline);
 		scrollFrame.setBackground(Color.white);
 		returnPanel.add(scrollFrame);
@@ -170,7 +170,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		text1.setEditable(false);
 		setComponentSize(text1, 100, 60);
 		text1.setContentType("text/html");
-		text1.setText("1");
+		text1.setText("&nbsp;&nbsp; 1");
 
 		StyledDocument doc = text1.getStyledDocument();
 		SimpleAttributeSet center = new SimpleAttributeSet();
@@ -191,7 +191,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text2, 100, 60);
 		text2.setFont(ANSWER_FONT);
 		text2.setContentType("text/html");
-		text2.setText("2");
+		text2.setText("&nbsp;&nbsp; 2");
 		StyledDocument doc2 = text2.getStyledDocument();
 		doc2.setParagraphAttributes(0, doc.getLength(), center, false);
 		text2.setAlignmentX(text1.BOTTOM_ALIGNMENT);
@@ -209,7 +209,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text3, 100, 60);
 		text3.setFont(ANSWER_FONT);
 		text3.setContentType("text/html");
-		text3.setText("3");
+		text3.setText("&nbsp;&nbsp; 3");
 		StyledDocument doc3 = text3.getStyledDocument();
 		doc3.setParagraphAttributes(0, doc.getLength(), center, false);
 		text3.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -225,7 +225,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text4, 100, 60);
 		text4.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text4.setContentType("text/html");
-		text4.setText("4");
+		text4.setText("&nbsp;&nbsp; 4");
 		StyledDocument doc4 = text4.getStyledDocument();
 		doc4.setParagraphAttributes(0, doc.getLength(), center, false);
 		text4.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -241,7 +241,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text5, 100, 60);
 		text5.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text5.setContentType("text/html");
-		text5.setText("5");
+		text5.setText("&nbsp;&nbsp; 5");
 		StyledDocument doc5 = text5.getStyledDocument();
 		doc5.setParagraphAttributes(0, doc.getLength(), center, false);
 		text5.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -257,7 +257,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text6, 100, 60);
 		text6.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text6.setContentType("text/html");
-		text6.setText("6");
+		text6.setText("&nbsp;&nbsp; 6");
 		StyledDocument doc6 = text6.getStyledDocument();
 		doc6.setParagraphAttributes(0, doc.getLength(), center, false);
 		text6.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -274,7 +274,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text7, 100, 60);
 		text7.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text7.setContentType("text/html");
-		text7.setText("7");
+		text7.setText("&nbsp;&nbsp; 7");
 		StyledDocument doc7 = text7.getStyledDocument();
 		SimpleAttributeSet center7 = new SimpleAttributeSet();
 		StyleConstants.setAlignment(center7, StyleConstants.ALIGN_CENTER);
@@ -301,13 +301,13 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 
 			LeftText = new JTextPane();
 			LeftText.setEditable(false);
-			setComponentSize(LeftText, 280, 30);
+			setComponentSize(LeftText, 280, 25);
 			LeftText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			LeftText.setContentType("text/html");
 			LeftText.setText("&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + part1);
 			Color lightgrey = new Color(224,224,224);
 			LeftText.setBorder(whiteline);
-			LeftText.setAlignmentY(JTextPane.BOTTOM_ALIGNMENT);
+			LeftText.setAlignmentY(LeftText.TOP_ALIGNMENT);
 			if (j%2 != 0){
 				LeftText.setBackground(Color.white);
 			}
@@ -335,9 +335,10 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				answer1 = new JRadioButton("1", false);
 				answer1.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer1.setHorizontalAlignment(SwingConstants.CENTER);
-				answer1.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer1.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer1.setVerticalTextPosition(JRadioButton.BOTTOM);
 				answer1.setForeground(Color.white);
+				answer1.setFocusable(false);
 				if (j%2 != 0){
 					answer1.setBackground(Color.white);
 					answer1.setForeground(Color.white);
@@ -356,8 +357,9 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				answer2 = new JRadioButton("2", false);
 				answer2.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer2.setHorizontalAlignment(SwingConstants.CENTER);
-				answer2.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer2.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer2.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer2.setFocusable(false);
 				if (j%2 != 0){
 					answer2.setBackground(Color.white);
 					answer2.setForeground(Color.white);
@@ -378,8 +380,9 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				answer3 = new JRadioButton("3", false);
 				answer3.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer3.setHorizontalAlignment(SwingConstants.CENTER);
-				answer3.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer3.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer3.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer3.setFocusable(false);
 				if (j%2 != 0){
 					answer3.setBackground(Color.white);
 					answer3.setForeground(Color.white);
@@ -397,8 +400,9 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				answer4 = new JRadioButton("4", false);
 				answer4.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer4.setHorizontalAlignment(SwingConstants.CENTER);
-				answer4.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer4.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer4.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer4.setFocusable(false);
 				if (j%2 != 0){
 					answer4.setBackground(Color.white);
 					answer4.setForeground(Color.white);
@@ -416,8 +420,9 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				answer5 = new JRadioButton("5", false);
 				answer5.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer5.setHorizontalAlignment(SwingConstants.CENTER);
-				answer5.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer5.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer5.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer5.setFocusable(false);
 				if (j%2 != 0){
 					answer5.setBackground(Color.white);
 					answer5.setForeground(Color.white);
@@ -435,8 +440,9 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				answer6 = new JRadioButton("6", false);
 				answer6.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer6.setHorizontalAlignment(SwingConstants.CENTER);
-				answer6.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer6.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer6.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer6.setFocusable(false);
 				if (j%2 != 0){
 					answer6.setBackground(Color.white);
 					answer6.setForeground(Color.white);
@@ -454,8 +460,9 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 				answer7 = new JRadioButton("7", false);
 				answer7.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer7.setHorizontalAlignment(SwingConstants.CENTER);
-				answer7.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer7.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer7.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer7.setFocusable(false);
 				if (j%2 != 0){
 					answer7.setBackground(Color.white);
 					answer7.setForeground(Color.white);
@@ -489,7 +496,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 
 			RightText = new JTextPane();
 			RightText.setEditable(false);
-			setComponentSize(RightText, 280, 30);
+			setComponentSize(RightText, 280, 25);
 			RightText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			RightText.setContentType("text/html");
 			RightText.setText(part2);
@@ -566,7 +573,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		);
 
 		scrollFrame.getVerticalScrollBar().setValue(0);
-		System.out.println("Position: " + scrollFrame.getVerticalScrollBar().getValue());
+		scrollFrame.getVerticalScrollBar().setUnitIncrement(10);
 
 		return returnPanel;
 	}

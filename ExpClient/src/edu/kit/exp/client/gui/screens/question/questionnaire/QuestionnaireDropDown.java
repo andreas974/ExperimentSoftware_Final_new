@@ -34,6 +34,11 @@ public class QuestionnaireDropDown extends QuestionnaireItem {
 	//	answerText.add(text);
 	//}
 
+	private void setComponentSize(JComponent comp, int width, int height) {
+		comp.setPreferredSize(new Dimension(width, height));
+		comp.setMaximumSize(new Dimension(width, height));
+		comp.setMinimumSize(new Dimension(width, height));
+	}
 
 	@Override
 	public JPanel getAnswerPanel() {
@@ -54,6 +59,7 @@ public class QuestionnaireDropDown extends QuestionnaireItem {
 
 
 		answer = new JComboBox<String>(answerText);
+		setComponentSize(answer, 500, 50);
 
 		answer.setFont(FONT);
 

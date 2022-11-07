@@ -1,6 +1,8 @@
 package edu.kit.exp.impl.continuousCompetition.client.Questionnaire;
 
 import edu.kit.exp.client.gui.screens.question.questionnaire.*;
+import edu.kit.exp.client.gui.screens.question.quiz.QuizItemMultipleChoice;
+
 import java.util.Random;
 import java.util.ArrayList;
 
@@ -20,44 +22,16 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		Random r = new Random();
 		ArrayList<String> Answers;
 
-		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenübers im Experiment empfand ich als...");
-		Answers = new ArrayList<>();
-		//For each Construct add one line with "/"-seperator
-		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unwissend/Klug");
-		Answers.add("Unangenehm/Angenehm&Hart/Nett&Unerfreulich/Erfreulich");
-		Answers.add("Mechanisch/Kreativ&Starr/Lebendig&Künstlich/Menschlich");
-		Answers.add("Schwach/Stark&Gefügig/Dominant&Unsicher/Selbstbewusst");
-		Answers.add("Unverlässlich/Verlässlich&Nicht vertrauenswürdig/Vertrauenswürdig&Unzuverlässig/Zuverlässig");
-		while (Answers.size()>0){
-			int randomAnswer = r.nextInt(Answers.size());
-			String[] parts = Answers.get(randomAnswer).split("&");
-			for (int i = 0; i<parts.length; i++){
-				semantic.addAnswer(parts[i]);
-			}
-			Answers.remove(Answers.get(randomAnswer));
-		}
-
-		/*semantic.addAnswer("Unintelligent/Intelligent");
-		semantic.addAnswer("Inkompetent/Kompetent");
-		semantic.addAnswer("Unwissend/Klug");
-		semantic.addAnswer("Unangenehm/Angenehm");
-		semantic.addAnswer("Hart/Nett");
-		semantic.addAnswer("Unerfreulich/Erfreulich");
-		semantic.addAnswer("Mechanisch/Kreativ");
-		semantic.addAnswer("Starr/Lebendig");
-		semantic.addAnswer("Künstlich/Menschlich");
-		//this.addQuestionnaireItem(semantic);
-
-		//semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
-		semantic.addAnswer("Schwach/Stark");
-		semantic.addAnswer("Gefügig/Dominant");
-		semantic.addAnswer("Unsicher/Selbstbewusst");
-		semantic.addAnswer("Unverlässlich/Verlässlich");
-		semantic.addAnswer("Nicht vertrauenswürdig/Vertrauenswürdig");
-		semantic.addAnswer("Unzuverlässig/Zuverlässig");*/
-		this.addQuestionnaireItem(semantic);
 
 		QuestionnaireMultipleChoice question;
+		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Wettbewerb im Experiment sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
+		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem anderen Experimentteilnehmenden dargestellt.");
+		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem Computeralgorithmus dargestellt.");
+		question.addAnswer("Mir wurden neben den angegebenen Marktinformationen zusätzliche Hinweise geliefert.");
+		question.addAnswer("Mir standen keine zusätzlichen Hinweise zur Verfügung.");
+		this.addQuestionnaireItem(question);
+
+
 		question = new QuestionnaireMultipleChoice("Welches Geschlecht haben Sie?");
 		question.addAnswer("männlich");
 		question.addAnswer("weiblich");
@@ -166,13 +140,63 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
 		liker.addAnswer("Es fiel mir leicht mit meinem Gegenüber zusammenzuarbeiten.");
-		liker.addAnswer("Ich konnte zusammen mit meinem Gegenüber ein gemeinsames Ziel erreichen. \n");
-		liker.addAnswer("Gemeinsam mit meinem Gegenüber konnten wir ein kooperatives Ergebnis erzielen.\n");
+		liker.addAnswer("Ich konnte zusammen mit meinem Gegenüber ein gemeinsames Ziel erreichen.");
+		liker.addAnswer("Gemeinsam mit meinem Gegenüber konnten wir ein kooperatives Ergebnis erzielen.");
 		liker.addAnswer("Ich habe verstanden, auf welches Ziel mein Gegenüber hinarbeiten wollte.");
 		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben. \n");
 		this.addQuestionnaireItem(liker);
 
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen.");
+		liker.addAnswer("Ich habe während des Experiments häufig die Empfehlung des Algorithmus für meine Preisentscheidung gewählt.");
+		liker.addAnswer("Ich glaube, dass die Empfehlungen des Algorithmus bessere als meine eigenen Entscheidugnen waren.");
+		liker.addAnswer("Im Durchschnitt waren die Empfehlungen des Algorithmus nahe an der für mich optimalen Aktion.");
+		liker.addAnswer("Im Durchschnitt waren meine eigene Entscheidungen nahe an der für mich optimalen Aktion.");
+		liker.addAnswer("Ich hatte ein hohes Vertrauen in die Empfehlungen des Algorithmus.");
+		liker.addAnswer("Ich hatte ein hohes Vertrauen in meinen eigenen Entscheidungen.");
+		this.addQuestionnaireItem(liker);
 
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Wählen Sie hier bei beiden Fragen Antwort ''5'', um zu zeigen, dass sie aufmerksam sind.");
+		liker.addAnswer("Es fiel mir leicht mit meinem Gegenüber zusammenzuarbeiten.");
+		liker.addAnswer("Ich konnte zusammen mit meinem Gegenüber ein gemeinsames Ziel erreichen.");
+		this.addQuestionnaireItem(liker);
+
+		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenübers im Experiment empfand ich als...");
+		Answers = new ArrayList<>();
+		//For each Construct add one line with "/"-seperator
+		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unwissend/Klug");
+		Answers.add("Unangenehm/Angenehm&Hart/Nett&Unerfreulich/Erfreulich");
+		Answers.add("Mechanisch/Kreativ&Starr/Lebendig&Künstlich/Menschlich");
+		Answers.add("Schwach/Stark&Gefügig/Dominant&Unsicher/Selbstbewusst");
+		Answers.add("Unverlässlich/Verlässlich&Nicht vertrauenswürdig/Vertrauenswürdig&Unzuverlässig/Zuverlässig");
+		while (Answers.size()>0){
+			int randomAnswer = r.nextInt(Answers.size());
+			String[] parts = Answers.get(randomAnswer).split("&");
+			for (int i = 0; i<parts.length; i++){
+				semantic.addAnswer(parts[i]);
+			}
+			Answers.remove(Answers.get(randomAnswer));
+		}
+
+		/*semantic.addAnswer("Unintelligent/Intelligent");
+		semantic.addAnswer("Inkompetent/Kompetent");
+		semantic.addAnswer("Unwissend/Klug");
+		semantic.addAnswer("Unangenehm/Angenehm");
+		semantic.addAnswer("Hart/Nett");
+		semantic.addAnswer("Unerfreulich/Erfreulich");
+		semantic.addAnswer("Mechanisch/Kreativ");
+		semantic.addAnswer("Starr/Lebendig");
+		semantic.addAnswer("Künstlich/Menschlich");
+		//this.addQuestionnaireItem(semantic);
+
+		//semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
+		semantic.addAnswer("Schwach/Stark");
+		semantic.addAnswer("Gefügig/Dominant");
+		semantic.addAnswer("Unsicher/Selbstbewusst");
+		semantic.addAnswer("Unverlässlich/Verlässlich");
+		semantic.addAnswer("Nicht vertrauenswürdig/Vertrauenswürdig");
+		semantic.addAnswer("Unzuverlässig/Zuverlässig");*/
+		this.addQuestionnaireItem(semantic);
 
 		QuestionnaireSelect11 select11 = new QuestionnaireSelect11("Geistige Anforderung:<br><span style=\"font-weight:normal\">Wie viel geistige Anforderung war bei der Informationsaufnahme und bei der Informationsverarbeitung erforderlich (z.B. Denken, Entscheiden, Rechnen, Erinnern, Hinsehen, Suchen ...)? War die Aufgabe leicht oder anspruchsvoll, einfach oder komplex, erfordert sie hohe Genauigkeit oder ist sie fehlertolerant?</span>");
 		select11.addAnswer("Gering/Hoch");

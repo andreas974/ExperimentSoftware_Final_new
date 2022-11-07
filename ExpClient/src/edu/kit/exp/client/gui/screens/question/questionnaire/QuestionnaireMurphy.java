@@ -347,6 +347,7 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 			inputField = new JSlider(JSlider.HORIZONTAL, 1, 9, 1);
 			inputField.setBackground(Color.white);
+			inputField.putClientProperty("JSlider.isFilled", Boolean.FALSE);
 			/*Dictionary map = new Hashtable();
 			map.put( new Integer(0), new JLabel("Gering") );
 			map.put( new Integer(11), new JLabel("Hoch") );*/
@@ -572,6 +573,7 @@ public class QuestionnaireMurphy extends QuestionnaireItem {
 
 
 		scrollFrame.getVerticalScrollBar().setValue(0);
+		scrollFrame.getVerticalScrollBar().setUnitIncrement(10);
 
 		return returnPanel;
 

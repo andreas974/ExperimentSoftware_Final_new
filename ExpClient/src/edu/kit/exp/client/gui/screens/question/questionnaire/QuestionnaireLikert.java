@@ -182,7 +182,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		text1.setEditable(false);
 		setComponentSize(text1, 100, 110);
 		text1.setContentType("text/html");
-		text1.setText("<p style='font-family: Tahoma; font-size: 10px'><b>Ich stimme<br>überhaupt<br>nicht zu<br><br><b>1<br>");
+		text1.setText("<p style='font-family: Tahoma; font-size: 10px'><b>&nbsp;&nbsp; Ich stimme<br>&nbsp;&nbsp; überhaupt<br>&nbsp;&nbsp; nicht zu<br><br><b>&nbsp;&nbsp; 1<br>");
 
 		StyledDocument doc = text1.getStyledDocument();
 		SimpleAttributeSet center = new SimpleAttributeSet();
@@ -203,7 +203,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text2, 100, 110);
 		text2.setFont(ANSWER_FONT);
 		text2.setContentType("text/html");
-		text2.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>2<br>");
+		text2.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>&nbsp;&nbsp; 2<br>");
 		StyledDocument doc2 = text2.getStyledDocument();
 		doc2.setParagraphAttributes(0, doc.getLength(), center, false);
 		text2.setAlignmentX(text1.BOTTOM_ALIGNMENT);
@@ -221,7 +221,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text3, 100, 110);
 		text3.setFont(ANSWER_FONT);
 		text3.setContentType("text/html");
-		text3.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>3<br>");
+		text3.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>&nbsp;&nbsp; 3<br>");
 		StyledDocument doc3 = text3.getStyledDocument();
 		doc3.setParagraphAttributes(0, doc.getLength(), center, false);
 		text3.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -237,7 +237,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text4, 100, 110);
 		text4.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text4.setContentType("text/html");
-		text4.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>4<br>");
+		text4.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>&nbsp;&nbsp; 4<br>");
 		StyledDocument doc4 = text4.getStyledDocument();
 		doc4.setParagraphAttributes(0, doc.getLength(), center, false);
 		text4.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -253,7 +253,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text5, 100, 110);
 		text5.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text5.setContentType("text/html");
-		text5.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>5<br>");
+		text5.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>&nbsp;&nbsp; 5<br>");
 		StyledDocument doc5 = text5.getStyledDocument();
 		doc5.setParagraphAttributes(0, doc.getLength(), center, false);
 		text5.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -269,7 +269,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text6, 100, 110);
 		text6.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text6.setContentType("text/html");
-		text6.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>6<br>");
+		text6.setText("<p style='font-family: Tahoma; font-size: 10px'><br><br><br><br><b>&nbsp;&nbsp; 6<br>");
 		StyledDocument doc6 = text6.getStyledDocument();
 		doc6.setParagraphAttributes(0, doc.getLength(), center, false);
 		text6.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -286,7 +286,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		setComponentSize(text7, 100, 110);
 		text7.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text7.setContentType("text/html");
-		text7.setText("<p style='font-family: Tahoma; font-size: 10px'><b>Ich stimme <br> vollkommen zu<br><br><b>7<br>");
+		text7.setText("<p style='font-family: Tahoma; font-size: 10px'><b>&nbsp;&nbsp; Ich stimme <br>&nbsp;&nbsp; vollkommen zu<br><br><b>&nbsp;&nbsp; 7<br>");
 		StyledDocument doc7 = text7.getStyledDocument();
 		SimpleAttributeSet center7 = new SimpleAttributeSet();
 		StyleConstants.setAlignment(center7, StyleConstants.ALIGN_CENTER);
@@ -314,7 +314,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 			QuestionText.setText("<p style='font-family: Tahoma; font-size: 10px'>" + anAnswerText + "<br>");
 			Color lightgrey = new Color(224,224,224);
 			QuestionText.setBorder(whiteline);
-			QuestionText.setAlignmentY(JTextPane.BOTTOM_ALIGNMENT);
+			QuestionText.setAlignmentY(JTextPane.TOP_ALIGNMENT);
 			if (j%2 != 0){
 				QuestionText.setBackground(Color.white);
 			}
@@ -342,9 +342,10 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer1 = new JRadioButton("1", false);
 				answer1.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer1.setHorizontalAlignment(SwingConstants.CENTER);
-				answer1.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer1.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer1.setVerticalTextPosition(JRadioButton.BOTTOM);
 				answer1.setForeground(Color.white);
+				answer1.setFocusable(false);
 				if (j%2 != 0){
 					answer1.setBackground(Color.white);
 					answer1.setForeground(Color.white);
@@ -363,8 +364,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer2 = new JRadioButton("  2", false);
 				answer2.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer2.setHorizontalAlignment(SwingConstants.CENTER);
-				answer2.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer2.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer2.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer2.setFocusable(false);
 				if (j%2 != 0){
 					answer2.setBackground(Color.white);
 					answer2.setForeground(Color.white);
@@ -385,8 +387,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer3 = new JRadioButton("  3", false);
 				answer3.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer3.setHorizontalAlignment(SwingConstants.CENTER);
-				answer3.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer3.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer3.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer3.setFocusable(false);
 				if (j%2 != 0){
 					answer3.setBackground(Color.white);
 					answer3.setForeground(Color.white);
@@ -404,8 +407,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer4 = new JRadioButton("  4", false);
 				answer4.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer4.setHorizontalAlignment(SwingConstants.CENTER);
-				answer4.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer4.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer4.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer4.setFocusable(false);
 				if (j%2 != 0){
 					answer4.setBackground(Color.white);
 					answer4.setForeground(Color.white);
@@ -423,8 +427,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer5 = new JRadioButton("  5", false);
 				answer5.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer5.setHorizontalAlignment(SwingConstants.CENTER);
-				answer5.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer5.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer5.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer5.setFocusable(false);
 				if (j%2 != 0){
 					answer5.setBackground(Color.white);
 					answer5.setForeground(Color.white);
@@ -442,8 +447,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer6 = new JRadioButton("  6", false);
 				answer6.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer6.setHorizontalAlignment(SwingConstants.CENTER);
-				answer6.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer6.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer6.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer6.setFocusable(false);
 				if (j%2 != 0){
 					answer6.setBackground(Color.white);
 					answer6.setForeground(Color.white);
@@ -461,8 +467,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 				answer7 = new JRadioButton("  7", false);
 				answer7.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer7.setHorizontalAlignment(SwingConstants.CENTER);
-				answer7.setHorizontalTextPosition(SwingConstants.CENTER);
+				answer7.setHorizontalTextPosition(SwingConstants.LEFT);
 				answer7.setVerticalTextPosition(JRadioButton.BOTTOM);
+				answer7.setFocusable(false);
 				if (j%2 != 0){
 					answer7.setBackground(Color.white);
 					answer7.setForeground(Color.white);

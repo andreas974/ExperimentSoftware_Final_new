@@ -236,6 +236,7 @@ public class QuestionnaireSelection extends QuestionnaireItem {
 				answer1.setHorizontalAlignment(SwingConstants.CENTER);
 				answer1.setHorizontalTextPosition(SwingConstants.RIGHT);
 				answer1.setForeground(Color.white);
+				answer1.setFocusable(false);
 				setComponentSize(answer1, 50, 25);
 				if (j%2 != 0){
 					answer1.setBackground(Color.white);
@@ -256,6 +257,7 @@ public class QuestionnaireSelection extends QuestionnaireItem {
 				answer2.setAlignmentX(Component.CENTER_ALIGNMENT);
 				answer2.setHorizontalAlignment(SwingConstants.CENTER);
 				answer2.setVerticalTextPosition(SwingConstants.BOTTOM);
+				answer2.setFocusable(false);
 				setComponentSize(answer2, 50, 25);
 				if (j%2 != 0){
 					answer2.setBackground(Color.white);
