@@ -84,7 +84,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 			}
 			Answers.remove(Answers.get(randomAnswer));
 		}*/
-		liker.addAnswer("Grundsätzlich mag ich es, mich im Wettbewerb mit anderen zu befinden.");
+		liker.addAnswer("Ich mag den Wettbewerb.");
 		liker.addAnswer("Ich mag es, gegen andere anzutreten.");
 		liker.addAnswer("Ich versuche oft, andere zu übertrumpfen.");
 
@@ -112,7 +112,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 			order.remove(0);
 		}*/
 
-		liker.addAnswer("Mein Gegenüber mag es, sich im Wettbewerb mit anderen zu befinden..");
+		liker.addAnswer("Mein Gegenüber mag den Wettbewerb.");
 		liker.addAnswer("Mein Gegenüber mag es, gegen andere anzutreten.");
 		liker.addAnswer("Mein Gegenüber versuchte oft, mich zu übertrumpfen.");
 
