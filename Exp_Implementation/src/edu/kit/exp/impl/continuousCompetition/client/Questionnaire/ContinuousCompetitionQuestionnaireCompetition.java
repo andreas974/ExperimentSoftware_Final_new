@@ -25,6 +25,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 		QuestionnaireMultipleChoice question;
 		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Wettbewerb im Experiment sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
+		question.setSelectMultiple(true);
 		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem anderen Experimentteilnehmenden dargestellt.");
 		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem Computeralgorithmus dargestellt.");
 		question.addAnswer("Mir wurden neben den angegebenen Marktinformationen zusätzliche Hinweise geliefert.");
@@ -33,6 +34,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 
 		question = new QuestionnaireMultipleChoice("Welches Geschlecht haben Sie?");
+		question.setSelectMultiple(false);
 		question.addAnswer("männlich");
 		question.addAnswer("weiblich");
 		question.addAnswer("divers");
