@@ -6,7 +6,7 @@
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="edu.kit.exp.impl.*" />
-        <option name="ENABLED" value="true" />
+        <option name="ENABLED" value="false" />
       </pattern>
     </extension>
     <method v="2">

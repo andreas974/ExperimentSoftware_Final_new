@@ -149,10 +149,10 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.addQuestionnaireItem(liker);
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen.");
-		liker.addAnswer("Ich habe während des Experiments häufig die Empfehlung des Algorithmus für meine Preisentscheidung gewählt.");
-		liker.addAnswer("Ich glaube, dass die Empfehlungen des Algorithmus bessere als meine eigenen Entscheidugnen waren.");
-		liker.addAnswer("Im Durchschnitt waren die Empfehlungen des Algorithmus nahe an der für mich optimalen Aktion.");
-		liker.addAnswer("Im Durchschnitt waren meine eigene Entscheidungen nahe an der für mich optimalen Aktion.");
+		liker.addAnswer("Ich habe während des Experiments häufig die Empfehlungen des Algorithmus für meine Preisentscheidung gewählt.");
+		liker.addAnswer("Ich glaube, dass die Empfehlungen des Algorithmus besser als meine eigenen Entscheidugnen waren.");
+		liker.addAnswer("Im Durchschnitt waren die Empfehlungen des Algorithmus nahe an der für mich optimalen Preisentscheidung.");
+		liker.addAnswer("Im Durchschnitt waren meine eigene Entscheidungen nahe an der für mich optimalen Preisentscheidung.");
 		liker.addAnswer("Ich hatte ein hohes Vertrauen in die Empfehlungen des Algorithmus.");
 		liker.addAnswer("Ich hatte ein hohes Vertrauen in meinen eigenen Entscheidungen.");
 		this.addQuestionnaireItem(liker);
