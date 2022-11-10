@@ -18,6 +18,17 @@ public class QuestionnaireNumberInput extends QuestionnaireItem {
 	/** The input field. */
 	private JTextField inputField;
 
+	private int minValue = 0;
+	private int maxValue = 10000;
+
+	public void setMinValue(int i){
+		this.minValue = i;
+	}
+
+	public void setMaxValue(int i){
+		this.maxValue = i;
+	}
+
 	/**
 	 * This constructor instantiates a new number input quiz item.
 	 *
@@ -55,7 +66,10 @@ public class QuestionnaireNumberInput extends QuestionnaireItem {
 	public boolean isValid() {
 		Pattern pattern = Pattern.compile(PATTERN_FOR_VALIDATION);
 		String inputText = inputField.getText();
-		return (inputText.isEmpty() == false && pattern.matcher(inputText).matches());
+		if (Integer.parseInt(inputText) >= minValue && Integer.parseInt(inputText) <= maxValue) {
+			return (inputText.isEmpty() == false && pattern.matcher(inputText).matches());
+		}
+		return false;
 	}
 
 	@Override

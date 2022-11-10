@@ -26,10 +26,10 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		QuestionnaireMultipleChoice question;
 		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Wettbewerb im Experiment sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
 		question.setSelectMultiple(true);
-		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem anderen Experimentteilnehmenden dargestellt.");
+		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem mernschlichen Experimentteilnehmenden dargestellt.");
 		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem Computeralgorithmus dargestellt.");
-		question.addAnswer("Mir wurden neben den angegebenen Marktinformationen zusätzliche Hinweise geliefert.");
-		question.addAnswer("Mir standen keine zusätzlichen Hinweise zur Verfügung.");
+		question.addAnswer("Mir standen zusätzliche Empfehlungen zur Preissetzung zur Verfügung.");
+		question.addAnswer("Mir standen keine zusätzlichen Empfehlungen zur Preissetzung zur Verfügung.");
 		this.addQuestionnaireItem(question);
 
 
@@ -41,6 +41,8 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.addQuestionnaireItem(question);
 
 		QuestionnaireNumberInput numberInput = new QuestionnaireNumberInput("Wie alt sind Sie?");
+		numberInput.setMinValue(15);
+		numberInput.setMaxValue(99);
 		this.addQuestionnaireItem(numberInput);
 
 		QuestionnaireDropDown questionDD;
@@ -65,6 +67,8 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.addQuestionnaireItem(questionDD);
 
 		numberInput = new QuestionnaireNumberInput("Wie oft haben Sie bereits an PAULA-Experimenten teilgenommen?");
+		numberInput.setMinValue(0);
+		numberInput.setMaxValue(30);
 		this.addQuestionnaireItem(numberInput);
 
 
@@ -86,7 +90,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 			}
 			Answers.remove(Answers.get(randomAnswer));
 		}*/
-		liker.addAnswer("Ich mag den Wettbewerb.");
+		liker.addAnswer("Grundsätzlich mag ich Wettbewerb.");
 		liker.addAnswer("Ich mag es, gegen andere anzutreten.");
 		liker.addAnswer("Ich versuche oft, andere zu übertrumpfen.");
 
@@ -114,7 +118,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 			order.remove(0);
 		}*/
 
-		liker.addAnswer("Mein Gegenüber mag den Wettbewerb.");
+		liker.addAnswer("Grundsätzlich mag mein Gegenüber Wettbewerb.");
 		liker.addAnswer("Mein Gegenüber mag es, gegen andere anzutreten.");
 		liker.addAnswer("Mein Gegenüber versuchte oft, mich zu übertrumpfen.");
 
@@ -128,24 +132,12 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		textInput = new QuestionnaireTextInput("Wie würden Sie die Strategie Ihres Gegenübers in eigenen Worten beschreiben?");
 		this.addQuestionnaireItem(textInput);
 
-
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
-		liker.addAnswer("Ich war bemüht ein gemeinsames Ziel mit meinem Gegenüber zu erreichen.");
-		liker.addAnswer("Ich habe versucht, mit meinem Gegenüber zusammenzuarbeiten.");
-		liker.addAnswer("Ich habe im Experiment versucht, den größtmöglichen Gewinn zu erzielen, indem ich mit meinem Gegenüber kooperiert habe.");
-
-
-		liker.addAnswer("Mein Gegenüber war bemüht ein gemeinsames Ziel mit mir zu erreichen.");
-		liker.addAnswer("Mein Gegenüber hat versucht, mit mir zusammenzuarbeiten.");
-		liker.addAnswer("Mein Gegenüber hat im Experiment versucht, den größtmöglichen Gewinn zu erzielen, indem er mit mir kooperiert hat.");
-		this.addQuestionnaireItem(liker);
-
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen.");
 		liker.addAnswer("Es fiel mir leicht mit meinem Gegenüber zusammenzuarbeiten.");
 		liker.addAnswer("Ich konnte zusammen mit meinem Gegenüber ein gemeinsames Ziel erreichen.");
 		liker.addAnswer("Gemeinsam mit meinem Gegenüber konnten wir ein kooperatives Ergebnis erzielen.");
 		liker.addAnswer("Ich habe verstanden, auf welches Ziel mein Gegenüber hinarbeiten wollte.");
-		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben. \n");
+		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben.");
 		this.addQuestionnaireItem(liker);
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen.");
@@ -154,7 +146,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		liker.addAnswer("Im Durchschnitt waren die Empfehlungen des Algorithmus nahe an der für mich optimalen Preisentscheidung.");
 		liker.addAnswer("Im Durchschnitt waren meine eigene Entscheidungen nahe an der für mich optimalen Preisentscheidung.");
 		liker.addAnswer("Ich hatte ein hohes Vertrauen in die Empfehlungen des Algorithmus.");
-		liker.addAnswer("Ich hatte ein hohes Vertrauen in meinen eigenen Entscheidungen.");
+		liker.addAnswer("Ich hatte ein hohes Vertrauen in meine eigenen Entscheidungen.");
 		this.addQuestionnaireItem(liker);
 
 
@@ -275,6 +267,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 
 		textInput = new QuestionnaireTextInput("Haben Sie weitere Anmerkungen zum Experiment?");
+		textInput.setEmpty(false);
 		this.addQuestionnaireItem(textInput);
 	}
 }

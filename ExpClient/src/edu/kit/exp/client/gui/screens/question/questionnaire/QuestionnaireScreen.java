@@ -39,6 +39,7 @@ public class QuestionnaireScreen extends QuestionScreen {
 		setPreText(PRE_TEXT);
 		setPostText(POST_TEXT);
 		setWrongAnswerText(WRONG_ANSWER_TEXT);
+		setButtonText("Nächste Frage");
 	}
 
 	/**

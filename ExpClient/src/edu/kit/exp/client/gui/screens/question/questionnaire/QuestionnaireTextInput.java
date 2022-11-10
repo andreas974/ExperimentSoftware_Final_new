@@ -14,6 +14,8 @@ public class QuestionnaireTextInput extends QuestionnaireItem {
 	private double minimumLength = 1;
 	private Dimension preferredSize = new Dimension(600, 100);
 
+	private boolean empty = true;
+
 	/**
 	 * This constructor instantiates a new number input quiz item.
 	 *
@@ -46,10 +48,19 @@ public class QuestionnaireTextInput extends QuestionnaireItem {
 		return returnPanel;
 	}
 
+	public void setEmpty(boolean i){
+		this.empty = i;
+	}
+
 	@Override
 	public boolean isValid() {
 		String inputText = inputField.getText();
-		return (inputText.isEmpty() == false && inputText.length() >= minimumLength);
+		if (empty == false){
+			return true;
+		}
+		else {
+			return (inputText.isEmpty() == false && inputText.length() >= minimumLength);
+		}
 	}
 
 	@Override
