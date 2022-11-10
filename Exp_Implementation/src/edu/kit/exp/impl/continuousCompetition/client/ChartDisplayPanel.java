@@ -99,12 +99,12 @@ public class ChartDisplayPanel extends JPanel {
 
     protected void calcDiagramParameters() {
         //this.t_mid_window = (t_window_max /2);
-        //For 1 minutes test
-        this.t_mid_window = 60000;
+        //For 2 minutes test
+        this.t_mid_window = 120000;
 
         this.t_hatch = t_window_max / t_hatch_number;
         //this.tStartOfLastWindow = tDuration- t_window_max + t_mid_window;
-        //For 1 minute test
+        //For 2 minute test
         this.tStartOfLastWindow = tDuration;
     }
 
