@@ -66,6 +66,9 @@ public class QuestionnaireNumberInput extends QuestionnaireItem {
 	public boolean isValid() {
 		Pattern pattern = Pattern.compile(PATTERN_FOR_VALIDATION);
 		String inputText = inputField.getText();
+		if (!pattern.matcher(inputText).matches()){
+			return false;
+		}
 		if (Integer.parseInt(inputText) >= minValue && Integer.parseInt(inputText) <= maxValue) {
 			return (inputText.isEmpty() == false && pattern.matcher(inputText).matches());
 		}

@@ -170,7 +170,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		text1.setEditable(false);
 		setComponentSize(text1, 100, 60);
 		text1.setContentType("text/html");
-		text1.setText("&nbsp;&nbsp; 1");
+		text1.setText("<span style='font-family: Tahoma; font-size: 11px'><b>&nbsp;&nbsp; 1");
 
 		StyledDocument doc = text1.getStyledDocument();
 		SimpleAttributeSet center = new SimpleAttributeSet();
@@ -191,7 +191,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text2, 100, 60);
 		text2.setFont(ANSWER_FONT);
 		text2.setContentType("text/html");
-		text2.setText("&nbsp;&nbsp; 2");
+		text2.setText("<span style='font-family: Tahoma; font-size: 11px'><b>&nbsp;&nbsp; 2");
 		StyledDocument doc2 = text2.getStyledDocument();
 		doc2.setParagraphAttributes(0, doc.getLength(), center, false);
 		text2.setAlignmentX(text1.BOTTOM_ALIGNMENT);
@@ -209,7 +209,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text3, 100, 60);
 		text3.setFont(ANSWER_FONT);
 		text3.setContentType("text/html");
-		text3.setText("&nbsp;&nbsp; 3");
+		text3.setText("<span style='font-family: Tahoma; font-size: 11px'><b>&nbsp;&nbsp; 3");
 		StyledDocument doc3 = text3.getStyledDocument();
 		doc3.setParagraphAttributes(0, doc.getLength(), center, false);
 		text3.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -225,7 +225,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text4, 100, 60);
 		text4.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text4.setContentType("text/html");
-		text4.setText("&nbsp;&nbsp; 4");
+		text4.setText("<span style='font-family: Tahoma; font-size: 11px'><b>&nbsp;&nbsp; 4");
 		StyledDocument doc4 = text4.getStyledDocument();
 		doc4.setParagraphAttributes(0, doc.getLength(), center, false);
 		text4.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -241,7 +241,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text5, 100, 60);
 		text5.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text5.setContentType("text/html");
-		text5.setText("&nbsp;&nbsp; 5");
+		text5.setText("<span style='font-family: Tahoma; font-size: 11px'><b>&nbsp;&nbsp; 5");
 		StyledDocument doc5 = text5.getStyledDocument();
 		doc5.setParagraphAttributes(0, doc.getLength(), center, false);
 		text5.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -257,7 +257,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text6, 100, 60);
 		text6.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text6.setContentType("text/html");
-		text6.setText("&nbsp;&nbsp; 6");
+		text6.setText("<span style='font-family: Tahoma; font-size: 11px'><b>&nbsp;&nbsp; 6");
 		StyledDocument doc6 = text6.getStyledDocument();
 		doc6.setParagraphAttributes(0, doc.getLength(), center, false);
 		text6.setBorder(BorderFactory.createLineBorder(Color.white, 2));
@@ -274,7 +274,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		setComponentSize(text7, 100, 60);
 		text7.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		text7.setContentType("text/html");
-		text7.setText("&nbsp;&nbsp; 7");
+		text7.setText("<span style='font-family: Tahoma; font-size: 11px'><b>&nbsp;&nbsp; 7");
 		StyledDocument doc7 = text7.getStyledDocument();
 		SimpleAttributeSet center7 = new SimpleAttributeSet();
 		StyleConstants.setAlignment(center7, StyleConstants.ALIGN_CENTER);
@@ -304,7 +304,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 			setComponentSize(LeftText, 280, 25);
 			LeftText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			LeftText.setContentType("text/html");
-			LeftText.setText("&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + part1);
+			LeftText.setText("<span style='font-family: Tahoma; font-size: 11px'>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + part1);
 			Color lightgrey = new Color(224,224,224);
 			LeftText.setBorder(whiteline);
 			LeftText.setAlignmentY(LeftText.TOP_ALIGNMENT);
@@ -499,7 +499,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 			setComponentSize(RightText, 280, 25);
 			RightText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			RightText.setContentType("text/html");
-			RightText.setText(part2);
+			RightText.setText("<span style='font-family: Tahoma; font-size: 11px'>" + part2);
 			RightText.setBorder(whiteline);
 			RightText.setAlignmentY(JTextPane.BOTTOM_ALIGNMENT);
 			if (j%2 != 0){

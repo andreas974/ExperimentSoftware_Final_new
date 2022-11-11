@@ -26,7 +26,7 @@ public abstract class QuestionScreen extends Screen{
 	private static final String DEFAULT_WRONG_ANSWER_TEXT = "Wrong! / Not valid!";
 	private static final String ICON_PATH = "/edu/kit/exp/common/resources/kit_logo.png";
 	private static final Dimension RETURN_BUTTON_SIZE = new Dimension(200, 50);
-	private static final Dimension QUESTION_SIZE = new Dimension(1000, 100);
+	private static final Dimension QUESTION_SIZE = new Dimension(1000, 150);
 	private static final Dimension TITLE_SIZE = new Dimension(1000, 100);
 
 	/**

@@ -33,6 +33,11 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 	private ArrayList<String> questionText;
 
 	/**
+	 * The answer text.
+	 */
+	private ArrayList<Integer> space;
+
+	/**
 	 * The answer option.
 	 */
 	private ArrayList<AbstractButton> answerOption;
@@ -78,6 +83,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		answerText = new ArrayList<>();
 		selectMultiple = false;
 		Text = new ArrayList<>();
+		space = new ArrayList<>();
 	}
 
 	private void setComponentSize(JComponent comp, int width, int height) {
@@ -86,6 +92,9 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 		comp.setMinimumSize(new Dimension(width, height));
 	}
 
+	public void addSpace(int i){
+		space.add(i);
+	}
 
 	/**
 	 * This method provides the experimenter with the option to add possible
@@ -301,6 +310,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 
 		//ButtonGroup answerGroup = new ButtonGroup();
 		int j = 2;
+		int s = 1;
 		for (String anAnswerText : answerText) {
 
 			ButtonGroup answerGroup = new ButtonGroup();
@@ -311,7 +321,7 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 			setComponentSize(QuestionText, 500, 50);
 			QuestionText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			QuestionText.setContentType("text/html");
-			QuestionText.setText("<p style='font-family: Tahoma; font-size: 10px'>" + anAnswerText + "<br>");
+			QuestionText.setText("<p style='font-family: Tahoma; font-size: 11px'>" + anAnswerText + "<br>");
 			Color lightgrey = new Color(224,224,224);
 			QuestionText.setBorder(whiteline);
 			QuestionText.setAlignmentY(JTextPane.TOP_ALIGNMENT);
@@ -499,6 +509,23 @@ public class QuestionnaireLikert extends QuestionnaireItem {
 			answerListPanel.setAlignmentX(returnPanel.LEFT_ALIGNMENT);
 			answerListPanel.setAlignmentY(answerListPanel.TOP_ALIGNMENT);
 			returnPanel.add(answerListPanel);
+
+			if (space.contains(s)){
+				JPanel box = new JPanel();
+				setComponentSize(box, 1000, 40);
+				box.setOpaque(false);
+				box.setBackground(Color.white);
+				d.gridx = 0;
+				d.gridy = j + 1;
+				d.gridwidth = 8;
+				//returnPanel.add(box);
+				answerListPanel.add(box, d);
+				j++;
+			}
+			d.gridwidth=1;
+
+
+			s++;
 
 			j++;
 		}

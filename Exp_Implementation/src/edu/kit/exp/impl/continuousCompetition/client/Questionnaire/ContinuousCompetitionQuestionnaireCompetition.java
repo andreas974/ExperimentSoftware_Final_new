@@ -17,21 +17,133 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 	public ContinuousCompetitionQuestionnaireCompetition(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
 		super(gameId, parameter, screenId, showUpTime);
 		this.setTitleText("Fragebogen");
-		this.setPreText("Klicken Sie \"Weiter\", um mit dem Fragebogen zum Experiment zu beginnen.");
+		this.setPreText("<html><center>Die zweite Phase des Experiments ist nun abgeschlossen.<br></b>Im Folgenden stellen wir Ihnen nun noch eine Reihe von Fragen. Bitte beantworten Sie diesen Fragebogen aufmerksam und vollständig.<br>Klicken Sie auf die Schaltfläche „Weiter“, um mit dem Fragebogen zu beginnen.</htmL>");
 		this.setPostText("Sie haben den Fragebogen erfolgreich abgeschlossen.<br>Klicken Sie \"Weiter\", um das Experiment zu beenden.");
 		Random r = new Random();
 		ArrayList<String> Answers;
+		QuestionnaireLikert liker;
+		QuestionnaireSemantic semantic;
 
 
 		QuestionnaireMultipleChoice question;
-		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Wettbewerb im Experiment sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
-		question.setSelectMultiple(true);
-		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem mernschlichen Experimentteilnehmenden dargestellt.");
-		question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wurde von einem Computeralgorithmus dargestellt.");
-		question.addAnswer("Mir standen zusätzliche Empfehlungen zur Preissetzung zur Verfügung.");
-		question.addAnswer("Mir standen keine zusätzlichen Empfehlungen zur Preissetzung zur Verfügung.");
+		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Experiment sind zutreffend? ");
+		question.addAnswer("Die Firma, mit der ich während des Experiments im Wettbewerb stand, wurde von einem menschlichen Experimentteilnehmenden dargestellt.");
+		question.addAnswer("Die Firma, mit der ich während des Experiments im Wettbewerb stand, wurde von einem Computeralgorithmus dargestellt.");
+		question.addAnswer("Keine der oben angegebenen Antworten trifft zu.");
 		this.addQuestionnaireItem(question);
 
+		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Experiment sind zutreffend? ");
+		question.addAnswer("Mir standen keine zusätzlichen Empfehlungen zur Preissetzung zur Verfügung.");
+		question.addAnswer("Mir standen zusätzliche Empfehlungen zur Preissetzung zur Verfügung.");
+		question.addAnswer("Keine der oben angegebenen Antworten trifft zu.");
+		this.addQuestionnaireItem(question);
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen zu Ihren Zielen während des Experiments zustimmen:");
+		liker.addAnswer("Mein Ziel war es, einen möglichst hohen Gesamtgewinn im Experiment zu erzielen.");
+		liker.addAnswer("Mein Ziel war es, besser als die andere Firma abzuschneiden.");
+		liker.addAnswer("Mein Ziel war es, mit der anderen Firma im Experiment zu kooperieren.");
+		this.addQuestionnaireItem(liker);
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen zu den Zielen der anderen Firma, mit der Sie im Experiment im Wettbewerb standen, zustimmen:");
+		liker.addAnswer("Das Ziel der anderen Firma war, besser als ich abzuschneiden.");
+		liker.addAnswer("Das Ziel der anderen Firma war, den höchstmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("Das Ziel der anderen Firma war, mit mir zu kooperieren.");
+		this.addQuestionnaireItem(liker);
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
+		/*//Random Order of Constructs
+		Answers = new ArrayList<>();
+		//For each Construct add one line with "/"-seperator
+		Answers.add("Ich mag den Wettbewerb./Ich genieße es, gegen Andere anzutreten./Ich versuche oft, andere zu übertrumpfen.");
+		Answers.add("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf mich./Ich bin jemand, der gerne gewinnt und es hasst zu verlieren.");
+		Answers.add("Mein Ziel im Experiment war, besser als mein Gegenüber abzuschneiden./Mein Ziel im Experiment war, den höchstmöglichen Gesamtgewinn zu erzielen.");
+		ArrayList<Integer> order = new ArrayList<>();
+		while (Answers.size()>0){
+			int randomAnswer = r.nextInt(Answers.size());
+			//To get order of random constructs for opponent questions
+			order.add(randomAnswer);
+			String[] parts = Answers.get(randomAnswer).split("/");
+			for (int i = 0; i<parts.length; i++){
+				liker.addAnswer(parts[i]);
+			}
+			Answers.remove(Answers.get(randomAnswer));
+		}*/
+		liker.addAnswer("Mir gefällt es, mich im Wettbewerb zu messen.");
+		liker.addAnswer("Ich mag es, gegen andere anzutreten.");
+		liker.addAnswer("Ich versuche oft, andere zu übertrumpfen.");
+		liker.addSpace(3);
+		liker.addAnswer("Ich bin jemand, der gerne gewinnt und es hasst zu verlieren.");
+		liker.addAnswer("Ich fühle mich schlecht, wenn ich in einem Wettbewerb verliere");
+		liker.addAnswer("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf mich.");
+		this.addQuestionnaireItem(liker);
+
+		QuestionnaireTextInput textInput = new QuestionnaireTextInput("Wie würden Sie Ihre Strategie in eigenen Worten beschreiben?");
+		this.addQuestionnaireItem(textInput);
+
+		textInput = new QuestionnaireTextInput("Wie würden Sie die Strategie Ihres Gegenübers in eigenen Worten beschreiben?");
+		this.addQuestionnaireItem(textInput);
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
+		liker.addAnswer("Es fiel mir leicht mit der anderen Firma zusammenzuarbeiten.");
+		liker.addAnswer("Ich konnte zusammen mit der anderen Firma ein gemeinsames Ziel erreichen.");
+		liker.addSpace(2);
+		liker.addAnswer("Ich habe verstanden, auf welches Ziel mein Gegenüber hinarbeiten wollte.");
+		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben.");
+		this.addQuestionnaireItem(liker);
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
+		liker.addAnswer("Bei meinen Preisentscheidungen während des Experiments bin ich den Empfehlungen des Algorithmus häufig gefolgt.");
+		liker.addSpace(1);
+		liker.addAnswer("Meine eigenen Preisentscheidungen waren geeignet, den größtmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("Die Preisempfehlungen des Algorithmus waren geeignet, den größmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("<span style='font-size:10px'>Ich glaube, dass die Empfehlungen des Algorithmus besser als meine eigenen Entscheidungen geeignet waren, um den größtmöglichen Gesamtgewinn zu erzielen.</span>");
+		liker.addAnswer("<span style='font-size:10px'>Ich glaube, dass meine eigenen Entscheidungen besser als die Empfehlungen des Algorithmus geeignet waren, um den größtmöglichen Gesamtgewinn zu erzielen.</span>");
+		liker.addSpace(5);
+		liker.addAnswer("Ich hatte hohes Vertrauen in die Empfehlungen des Algorithmus.");
+		this.addQuestionnaireItem(liker);
+
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
+		liker.addAnswer("Wählen Sie hier bitte den Wert \"5\" aus, um zu zeigen, dass Sie diese Aussage aufmerksam gelesen haben.");
+		liker.addAnswer("Wählen Sie hier bitte den Wert \"6\" aus, um zu zeigen, dass Sie diese Aussage aufmerksam gelesen haben.");
+		this.addQuestionnaireItem(liker);
+
+		semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenübers im Experiment empfand ich als...");
+		Answers = new ArrayList<>();
+		//For each Construct add one line with "/"-seperator
+		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unklug/Klug");
+		Answers.add("Unangenehm/Angenehm&Hart/Nett&Unerfreulich/Erfreulich");
+		Answers.add("Mechanisch/Kreativ&Starr/Lebendig&Künstlich/Menschlich");
+		Answers.add("Schwach/Stark&Gefügig/Dominant&Unsicher/Selbstbewusst");
+		Answers.add("Unzuverlässig/Zuverlässig&Nicht vertrauenswürdig/Vertrauenswürdig&Unverlässlich/Verlässlich");
+		while (Answers.size()>0){
+			int randomAnswer = r.nextInt(Answers.size());
+			String[] parts = Answers.get(randomAnswer).split("&");
+			for (int i = 0; i<parts.length; i++){
+				semantic.addAnswer(parts[i]);
+			}
+			Answers.remove(Answers.get(randomAnswer));
+		}
+
+		/*semantic.addAnswer("Unintelligent/Intelligent");
+		semantic.addAnswer("Inkompetent/Kompetent");
+		semantic.addAnswer("Unwissend/Klug");
+		semantic.addAnswer("Unangenehm/Angenehm");
+		semantic.addAnswer("Hart/Nett");
+		semantic.addAnswer("Unerfreulich/Erfreulich");
+		semantic.addAnswer("Mechanisch/Kreativ");
+		semantic.addAnswer("Starr/Lebendig");
+		semantic.addAnswer("Künstlich/Menschlich");
+		//this.addQuestionnaireItem(semantic);
+
+		//semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
+		semantic.addAnswer("Schwach/Stark");
+		semantic.addAnswer("Gefügig/Dominant");
+		semantic.addAnswer("Unsicher/Selbstbewusst");
+		semantic.addAnswer("Unverlässlich/Verlässlich");
+		semantic.addAnswer("Nicht vertrauenswürdig/Vertrauenswürdig");
+		semantic.addAnswer("Unzuverlässig/Zuverlässig");*/
+		this.addQuestionnaireItem(semantic);
 
 		question = new QuestionnaireMultipleChoice("Welches Geschlecht haben Sie?");
 		question.setSelectMultiple(false);
@@ -72,160 +184,6 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.addQuestionnaireItem(numberInput);
 
 
-		QuestionnaireLikert liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
-		/*//Random Order of Constructs
-		Answers = new ArrayList<>();
-		//For each Construct add one line with "/"-seperator
-		Answers.add("Ich mag den Wettbewerb./Ich genieße es, gegen Andere anzutreten./Ich versuche oft, andere zu übertrumpfen.");
-		Answers.add("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf mich./Ich bin jemand, der gerne gewinnt und es hasst zu verlieren.");
-		Answers.add("Mein Ziel im Experiment war, besser als mein Gegenüber abzuschneiden./Mein Ziel im Experiment war, den höchstmöglichen Gesamtgewinn zu erzielen.");
-		ArrayList<Integer> order = new ArrayList<>();
-		while (Answers.size()>0){
-			int randomAnswer = r.nextInt(Answers.size());
-			//To get order of random constructs for opponent questions
-			order.add(randomAnswer);
-			String[] parts = Answers.get(randomAnswer).split("/");
-			for (int i = 0; i<parts.length; i++){
-				liker.addAnswer(parts[i]);
-			}
-			Answers.remove(Answers.get(randomAnswer));
-		}*/
-		liker.addAnswer("Grundsätzlich mag ich Wettbewerb.");
-		liker.addAnswer("Ich mag es, gegen andere anzutreten.");
-		liker.addAnswer("Ich versuche oft, andere zu übertrumpfen.");
-
-		liker.addAnswer("Im Wettbewerb zu verlieren hat kaum Auswirkungen auf mich.");
-		liker.addAnswer("Ich bin jemand, der gerne gewinnt und es hasst zu verlieren.");
-
-		liker.addAnswer("Mein Ziel im Experiment war besser als mein Gegenüber abzuschneiden.");
-		liker.addAnswer("Mein Ziel im Experiment war den höchstmöglichen Gesamtgewinn zu erzielen.");
-		this.addQuestionnaireItem(liker);
-
-		QuestionnaireTextInput textInput = new QuestionnaireTextInput("Wie würden Sie Ihre Strategie in eigenen Worten beschreiben?");
-		this.addQuestionnaireItem(textInput);
-
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen über Ihren Gegenüber zustimmen.");
-		/*Answers = new ArrayList<>();
-		Answers.add("Mein Gegenüber mag den Wettbewerb./Mein Gegenüber genießt es, gegen Andere anzutreten./Mein Gegenüber versuchte oft, mich zu übertrumpfen.");
-		Answers.add("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf meinen Gegenüber./Mein Gegenüber ist jemand, der gerne gewinnt und es hasst zu verlieren.");
-		Answers.add("Das Ziel meines Gegenübers im Experiment war, besser als ich abzuschneiden./Das Ziel meines Gegenübers im Experiment war, den höchstmöglichen Gesamtgewinn zu erzielen.");
-		while (order.size()>0){
-			//To get same order of random constructs for opponent questions
-			String[] parts = Answers.get(order.get(0)).split("/");
-			for (int i = 0; i<parts.length; i++){
-				liker.addAnswer(parts[i]);
-			}
-			order.remove(0);
-		}*/
-
-		liker.addAnswer("Grundsätzlich mag mein Gegenüber Wettbewerb.");
-		liker.addAnswer("Mein Gegenüber mag es, gegen andere anzutreten.");
-		liker.addAnswer("Mein Gegenüber versuchte oft, mich zu übertrumpfen.");
-
-		liker.addAnswer("Im Wettbewerb zu verlieren hat kaum Auswirkungen auf meinen Gegenüber.");
-		liker.addAnswer("Mein Gegenüber ist jemand, der gerne gewinnt und es hasst zu verlieren.");
-
-		liker.addAnswer("Das Ziel meines Gegenübers im Experiment war besser als ich abzuschneiden.");
-		liker.addAnswer("Das Ziel meines Gegenübers im Experiment war den höchstmöglichen Gesamtgewinn zu erzielen.");
-		this.addQuestionnaireItem(liker);
-
-		textInput = new QuestionnaireTextInput("Wie würden Sie die Strategie Ihres Gegenübers in eigenen Worten beschreiben?");
-		this.addQuestionnaireItem(textInput);
-
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen.");
-		liker.addAnswer("Es fiel mir leicht mit meinem Gegenüber zusammenzuarbeiten.");
-		liker.addAnswer("Ich konnte zusammen mit meinem Gegenüber ein gemeinsames Ziel erreichen.");
-		liker.addAnswer("Gemeinsam mit meinem Gegenüber konnten wir ein kooperatives Ergebnis erzielen.");
-		liker.addAnswer("Ich habe verstanden, auf welches Ziel mein Gegenüber hinarbeiten wollte.");
-		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben.");
-		this.addQuestionnaireItem(liker);
-
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen.");
-		liker.addAnswer("Ich habe während des Experiments häufig die Empfehlungen des Algorithmus für meine Preisentscheidung gewählt.");
-		liker.addAnswer("Ich glaube, dass die Empfehlungen des Algorithmus besser als meine eigenen Entscheidugnen waren.");
-		liker.addAnswer("Im Durchschnitt waren die Empfehlungen des Algorithmus nahe an der für mich optimalen Preisentscheidung.");
-		liker.addAnswer("Im Durchschnitt waren meine eigene Entscheidungen nahe an der für mich optimalen Preisentscheidung.");
-		liker.addAnswer("Ich hatte ein hohes Vertrauen in die Empfehlungen des Algorithmus.");
-		liker.addAnswer("Ich hatte ein hohes Vertrauen in meine eigenen Entscheidungen.");
-		this.addQuestionnaireItem(liker);
-
-
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Wählen Sie hier bei beiden Fragen Antwort ''5'', um zu zeigen, dass sie aufmerksam sind.");
-		liker.addAnswer("Es fiel mir leicht mit meinem Gegenüber zusammenzuarbeiten.");
-		liker.addAnswer("Ich konnte zusammen mit meinem Gegenüber ein gemeinsames Ziel erreichen.");
-		this.addQuestionnaireItem(liker);
-
-		QuestionnaireSemantic semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenübers im Experiment empfand ich als...");
-		Answers = new ArrayList<>();
-		//For each Construct add one line with "/"-seperator
-		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unwissend/Klug");
-		Answers.add("Unangenehm/Angenehm&Hart/Nett&Unerfreulich/Erfreulich");
-		Answers.add("Mechanisch/Kreativ&Starr/Lebendig&Künstlich/Menschlich");
-		Answers.add("Schwach/Stark&Gefügig/Dominant&Unsicher/Selbstbewusst");
-		Answers.add("Unverlässlich/Verlässlich&Nicht vertrauenswürdig/Vertrauenswürdig&Unzuverlässig/Zuverlässig");
-		while (Answers.size()>0){
-			int randomAnswer = r.nextInt(Answers.size());
-			String[] parts = Answers.get(randomAnswer).split("&");
-			for (int i = 0; i<parts.length; i++){
-				semantic.addAnswer(parts[i]);
-			}
-			Answers.remove(Answers.get(randomAnswer));
-		}
-
-		/*semantic.addAnswer("Unintelligent/Intelligent");
-		semantic.addAnswer("Inkompetent/Kompetent");
-		semantic.addAnswer("Unwissend/Klug");
-		semantic.addAnswer("Unangenehm/Angenehm");
-		semantic.addAnswer("Hart/Nett");
-		semantic.addAnswer("Unerfreulich/Erfreulich");
-		semantic.addAnswer("Mechanisch/Kreativ");
-		semantic.addAnswer("Starr/Lebendig");
-		semantic.addAnswer("Künstlich/Menschlich");
-		//this.addQuestionnaireItem(semantic);
-
-		//semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
-		semantic.addAnswer("Schwach/Stark");
-		semantic.addAnswer("Gefügig/Dominant");
-		semantic.addAnswer("Unsicher/Selbstbewusst");
-		semantic.addAnswer("Unverlässlich/Verlässlich");
-		semantic.addAnswer("Nicht vertrauenswürdig/Vertrauenswürdig");
-		semantic.addAnswer("Unzuverlässig/Zuverlässig");*/
-		this.addQuestionnaireItem(semantic);
-
-		QuestionnaireSelect11 select11 = new QuestionnaireSelect11("Geistige Anforderung:<br><span style=\"font-weight:normal\">Wie viel geistige Anforderung war bei der Informationsaufnahme und bei der Informationsverarbeitung erforderlich (z.B. Denken, Entscheiden, Rechnen, Erinnern, Hinsehen, Suchen ...)? War die Aufgabe leicht oder anspruchsvoll, einfach oder komplex, erfordert sie hohe Genauigkeit oder ist sie fehlertolerant?</span>");
-		select11.addAnswer("Gering/Hoch");
-		this.addQuestionnaireItem(select11);
-
-		select11 = new QuestionnaireSelect11("Zeitliche Anforderung:<br><br><span style=\"font-weight:normal\">Wie viel Zeitdruck empfanden Sie hinsichtlich der Häufigkeit oder dem Takt mit dem die Aufgaben oder Aufgabenelemente auftraten? War die Aufgabe langsam und geruhsam oder schnell und hektisch?</span>");
-		select11.addAnswer("Gering/Hoch");
-		this.addQuestionnaireItem(select11);
-
-		select11 = new QuestionnaireSelect11("Leistung:<br><br><span style=\"font-weight:normal\">Wie erfolgreich haben Sie Ihrer Meinung nach die vom Versuchsleiter (oder Ihnen selbst) gesetzten Ziele erreicht? Wie zufrieden waren Sie mit Ihrer Leistung bei der Verfolgung dieser Ziele?</span>");
-		select11.addAnswer("Gering/Hoch");
-		this.addQuestionnaireItem(select11);
-
-		select11 = new QuestionnaireSelect11("Anstrengung:<br><br><span style=\"font-weight:normal\">Wie hart mussten Sie arbeiten, um Ihren Grad an Aufgabenerfüllung zu erreichen?</span>");
-		select11.addAnswer("Gering/Hoch");
-		this.addQuestionnaireItem(select11);
-
-		select11 = new QuestionnaireSelect11("Frustration:<br><br><span style=\"font-weight:normal\">Wie unsicher, entmutigt, irritiert, gestresst und verärgert (versus sicher, bestätigt, zufrieden, entspannt und zufrieden mit sich selbst) fühlten Sie sich während der Aufgabe?</span>");
-		select11.addAnswer("Gering/Hoch");
-		this.addQuestionnaireItem(select11);
-
-		QuestionnaireSelection select = new QuestionnaireSelection("Bitte vergleichen Sie im Folgenden die einzelnen Dimensionen Ihrer Beanspruchung und geben Sie für jedes Paar an, welche Dimension Sie jeweils als intensiver empfunden haben (ein Kreuz pro Zeile).");
-		select.addAnswer("Zeitliche Anforderung/Geistige Anforderung");
-		select.addAnswer("Leistung/Geistige Anforderung");
-		select.addAnswer("Zeitliche Anforderung/Anstrengung");
-		select.addAnswer("Leistung/Zeitliche Anforderung");
-		select.addAnswer("Frustration/Geistige Anforderung");
-		select.addAnswer("Anstrengung/Leistung");
-		select.addAnswer("Zeitliche Anforderung/Frustration");
-		select.addAnswer("Geistige Anforderung/Anstrengung");
-		select.addAnswer("Leistung/Frustration");
-		select.addAnswer("Frustration/Anstrengung");
-		this.addQuestionnaireItem(select);
-
-
 		QuestionnaireMultipleChoiceKonow k1 = new QuestionnaireMultipleChoiceKonow("Bitte wählen Sie...");
 		k1.setQText("<p style=\"font-family: Tahoma; font-size: 12px\"; align=\"justify\">Bob und John sind identisch in Bezug auf ihre körperlichen und geistigen Fähigkeiten. Die beiden erleiden Schiffbruch auf einer unbewohnten Insel, auf welcher Bananen die einzige Nahrung sind. 10 Bananen pro Tag fallen vor ihren Füßen auf den Boden, andere fallen ins Meer. Die beiden können so viele Bananen sammeln wie sie wollen, indem sie auf einen Baum klettern, die Bananen pflücken, bevor sie ins Meer fallen und dann auf einen Haufen werfen. Auf diese Weise pflückt Bob 7 Bananen pro Tag und John 3 pro Tag. Insgesamt gibt es also 20 Bananen pro Tag auf der Insel. Wenn Sie über die Aufteilung der Bananen entscheiden könnten und gerecht sein möchten, welche der folgenden Aufteilungen würden Sie wählen?");
 		k1.addAnswer("<b>Bob bekommt 10 Bananen</b>, die 7, die er gepflückt hat, plus 3 die heruntergefallen sind, und <br><b>John bekommt 10</b>, die 3, die er gepflückt hat, plus 7 die heruntergefallen sind.");
@@ -247,27 +205,5 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		k1.addAnswer("Bill erhält 700 Euro und Sam erhält 500 Euro.");
 		k1.addAnswer("Bill erhält 800 Euro und Sam erhält 400 Euro");
 		this.addQuestionnaireItem(k1);
-
-		QuestionnaireText text = new QuestionnaireText("Beschreibung:");
-		text.setQText("Bei den folgenden Fragen werden Sie bestimmen, wie Sie bestimmte Geldbeträge zwischen sich selbst und einer anderen Person aufteilen würden. Im Folgenden werden wir diese andere Person schlicht als „Jemand“ bezeichnen. Diese/r Jemand ist eine Person, welche Sie nicht kennen und gegenseitig anonym bleiben wird. All ihre Entscheidungen sind vollumfänglich vertraulich. Für jede der folgenden Fragen, geben Sie bitte jeweils diejenige Geldverteilung an, welche Sie am meisten bevorzugen würden.\n" +
-				"<br><br>" +
-				"Stellen Sie sich vor, dass Ihre Entscheidungen jeweils sowohl Geld für Sie wie auch für die andere Person generieren. Die Währung und Einheit der Geldverteilung ist dabei unerheblich.\n" +
-				"<br><br>" +
-				"Es gibt keine richtigen und falschen Antworten in dieser Aufgabe, es geht hier ausschließlich um persönliche Präferenzen. Wenn Sie Ihre Entscheidung gefällt haben, markieren Sie die entsprechende Position auf der Mittellinie und schreiben Sie die entsprechende Geldverteilung in die Kästen rechts. Sie können pro Frage nur eine Position markieren.\n");
-		this.addQuestionnaireItem(text);
-
-		QuestionnaireMurphy murphy = new QuestionnaireMurphy("Bitte geben Sie an:");
-		murphy.addAnswer("85/85/85/85/85/85/85/85/85/85/76/68/59/50/41/33/24/15");
-		murphy.addAnswer("85/87/89/91/93/94/96/98/100/15/19/24/28/33/37/41/46/50");
-		murphy.addAnswer("50/54/59/63/68/72/76/81/85/100/98/96/94/93/91/89/87/85");
-		murphy.addAnswer("85/85/85/85/85/85/85/85/85/85/76/68/59/50/41/33/24/15");
-		murphy.addAnswer("85/87/89/91/93/94/96/98/100/15/19/24/28/33/37/41/46/50");
-		murphy.addAnswer("50/54/59/63/68/72/76/81/85/100/98/96/94/93/91/89/87/85");
-		this.addQuestionnaireItem(murphy);
-
-
-		textInput = new QuestionnaireTextInput("Haben Sie weitere Anmerkungen zum Experiment?");
-		textInput.setEmpty(false);
-		this.addQuestionnaireItem(textInput);
 	}
 }
