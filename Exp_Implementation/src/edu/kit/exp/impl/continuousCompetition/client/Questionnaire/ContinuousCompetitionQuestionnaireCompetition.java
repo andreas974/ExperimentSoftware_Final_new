@@ -33,7 +33,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.addQuestionnaireItem(question);
 
 		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Experiment sind zutreffend? ");
-		question.addAnswer("Mir standen keine zusätzlichen Empfehlungen zur Preissetzung zur Verfügung.");
+		question.addAnswer("<html>Mir standen <u>keine</u> zusätzlichen Empfehlungen zur Preissetzung zur Verfügung.</html>");
 		question.addAnswer("Mir standen zusätzliche Empfehlungen zur Preissetzung zur Verfügung.");
 		question.addAnswer("Keine der oben angegebenen Antworten trifft zu.");
 		this.addQuestionnaireItem(question);
@@ -73,7 +73,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		liker.addAnswer("Ich versuche oft, andere zu übertrumpfen.");
 		liker.addSpace(3);
 		liker.addAnswer("Ich bin jemand, der gerne gewinnt und es hasst zu verlieren.");
-		liker.addAnswer("Ich fühle mich schlecht, wenn ich in einem Wettbewerb verliere");
+		liker.addAnswer("Ich fühle mich schlecht, wenn ich in einem Wettbewerb verliere.");
 		liker.addAnswer("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf mich.");
 		this.addQuestionnaireItem(liker);
 
@@ -180,7 +180,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 
 		numberInput = new QuestionnaireNumberInput("Wie oft haben Sie bereits an PAULA-Experimenten teilgenommen?");
 		numberInput.setMinValue(0);
-		numberInput.setMaxValue(30);
+		numberInput.setMaxValue(50);
 		this.addQuestionnaireItem(numberInput);
 
 
