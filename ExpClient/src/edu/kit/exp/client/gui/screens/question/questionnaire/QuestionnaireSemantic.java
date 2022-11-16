@@ -557,7 +557,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		final int[] x = {0};
 
 
-		test.addMouseMotionListener(new MouseMotionListener() {
+		MouseMotionListener e = new MouseMotionListener() {
 			@Override
 			public void mouseDragged(MouseEvent e) {
 
@@ -569,8 +569,15 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 					setVertical(0);
 					x[0]++;
 				}
-			}}
-		);
+			}
+		};
+
+
+		test.addMouseMotionListener(e);
+		returnPanel.addMouseMotionListener(e);
+		scrollFrame.addMouseMotionListener(e);
+		answerListPanel.addMouseMotionListener(e);
+
 
 		scrollFrame.getVerticalScrollBar().setValue(0);
 		scrollFrame.getVerticalScrollBar().setUnitIncrement(10);

@@ -88,18 +88,18 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		liker.addAnswer("Ich konnte zusammen mit der anderen Firma ein gemeinsames Ziel erreichen.");
 		liker.addSpace(2);
 		liker.addAnswer("Ich habe verstanden, auf welches Ziel mein Gegenüber hinarbeiten wollte.");
-		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenzuarbeiten, damit alle am Ende mehr Gewinn haben.");
+		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenarbeiten, damit alle am Ende mehr Gewinn haben.");
 		this.addQuestionnaireItem(liker);
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
-		liker.addAnswer("Bei meinen Preisentscheidungen während des Experiments bin ich den Empfehlungen des Algorithmus häufig gefolgt.");
+		liker.addAnswer("<span style='font-size:10px'>Bei meinen Preisentscheidungen während des Experiments bin ich den Empfehlungen des Algorithmus häufig gefolgt.");
 		liker.addSpace(1);
-		liker.addAnswer("Meine eigenen Preisentscheidungen waren geeignet, den größtmöglichen Gesamtgewinn zu erzielen.");
-		liker.addAnswer("Die Preisempfehlungen des Algorithmus waren geeignet, den größmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("<span style='font-size:10px'>Meine eigenen Preisentscheidungen waren geeignet, den größtmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("<span style='font-size:10px'>Die Preisempfehlungen des Algorithmus waren geeignet, den größmöglichen Gesamtgewinn zu erzielen.");
 		liker.addAnswer("<span style='font-size:10px'>Ich glaube, dass die Empfehlungen des Algorithmus besser als meine eigenen Entscheidungen geeignet waren, um den größtmöglichen Gesamtgewinn zu erzielen.</span>");
 		liker.addAnswer("<span style='font-size:10px'>Ich glaube, dass meine eigenen Entscheidungen besser als die Empfehlungen des Algorithmus geeignet waren, um den größtmöglichen Gesamtgewinn zu erzielen.</span>");
 		liker.addSpace(5);
-		liker.addAnswer("Ich hatte hohes Vertrauen in die Empfehlungen des Algorithmus.");
+		liker.addAnswer("<span style='font-size:10px'>Ich hatte hohes Vertrauen in die Empfehlungen des Algorithmus.");
 		this.addQuestionnaireItem(liker);
 
 
