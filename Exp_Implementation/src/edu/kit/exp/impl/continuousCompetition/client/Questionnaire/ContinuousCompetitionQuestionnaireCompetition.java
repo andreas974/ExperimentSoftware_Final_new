@@ -25,6 +25,7 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		QuestionnaireSemantic semantic;
 
 
+
 		QuestionnaireMultipleChoice question;
 		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Experiment sind zutreffend? ");
 		question.addAnswer("Die Firma, mit der ich während des Experiments im Wettbewerb stand, wurde von einem menschlichen Experimentteilnehmenden dargestellt.");
