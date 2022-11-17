@@ -6,9 +6,9 @@ import edu.kit.exp.client.gui.screens.question.quiz.QuizScreen;
 /**
  * Created by dschnurr on 22.10.14.
  */
-public class ContinuousCompetitionQuizRB2_agent extends QuizScreen {
+public class ContinuousCompetitionQuizHA2_DSS extends QuizScreen {
 
-    public ContinuousCompetitionQuizRB2_agent(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
+    public ContinuousCompetitionQuizHA2_DSS(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
         super(gameId, parameter, screenId, showUpTime);
 
         this.setTitleText("Fragen zur Anleitung");
@@ -50,6 +50,11 @@ public class ContinuousCompetitionQuizRB2_agent extends QuizScreen {
         question.addAnswer("Falsch", true);
         this.addQuizItem(question);
 
+        question = new QuizItemMultipleChoice("Während der gesamten Zeit kann ich auf einen Vorschlag eines Algorithmus für meine Preisentscheidung zurückgreifen.");
+        question.addAnswer("Wahr", true);
+        question.addAnswer("Falsch");
+        this.addQuizItem(question);
+
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zu den im Wettbewerb stehenden Firmen sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
         question.addAnswer("Alle Firmen werden von menschlichen Teilnehmenden des Experiments dargestellt.");
         question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wird von einem Computeralgorithmus dargestellt.", true);
@@ -61,6 +66,12 @@ public class ContinuousCompetitionQuizRB2_agent extends QuizScreen {
         question.addAnswer("Der eingesetzte Algorithmus verhält sich rein zufällig unabhängig von meinem Verhalten.");
         question.addAnswer("Das Ziel des Algorithmus ist es, einen möglichst hohen Gewinn zu erzielen.", true);
         question.addAnswer("Der Algorithmus verfolgt unveränderliche Entscheidungsregeln basierend auf den gesetzten Preisen und Mengen.");
+        this.addQuizItem(question);
+
+        question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zum Computeralgorithmus, der mir während des Experiments Preisempfehlungen liefert, sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
+        question.addAnswer("Die Preisvorschläge des Algorithmus sind rein zufällig.");
+        question.addAnswer("Die Preisvorschläge basieren auf den gesetzten Preisen und der nachgefragten Mengen.", true);
+        question.addAnswer("Der Algorithmus für die Preisempfehlungen verfolgt einen gewinnmaximierenden Ansatz.", true);
         this.addQuizItem(question);
 
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zur nachgefragten Menge Ihres Gutes sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");

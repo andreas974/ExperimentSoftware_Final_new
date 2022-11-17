@@ -1,20 +1,19 @@
 package edu.kit.exp.impl.continuousCompetition.client.Questionnaire;
 
 import edu.kit.exp.client.gui.screens.question.questionnaire.*;
-import edu.kit.exp.client.gui.screens.question.quiz.QuizItemMultipleChoice;
 
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by tondaroder on 30.01.17.
  */
-public class ContinuousCompetitionQuestionnaireCompetition extends QuestionnaireScreen {
+public class ContinuousCompetitionQuestionnaireCompetition_DSS extends QuestionnaireScreen {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -8841977439730389225L;
 
-	public ContinuousCompetitionQuestionnaireCompetition(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
+	public ContinuousCompetitionQuestionnaireCompetition_DSS(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
 		super(gameId, parameter, screenId, showUpTime);
 		this.setTitleText("Fragebogen");
 		this.setPreText("<html><center>Die zweite Phase des Experiments ist nun abgeschlossen.<br></b>Im Folgenden stellen wir Ihnen nun noch eine Reihe von Fragen. Bitte beantworten Sie diesen Fragebogen aufmerksam und vollständig.<br>Klicken Sie auf die Schaltfläche „Weiter“, um mit dem Fragebogen zu beginnen.</htmL>");
@@ -91,6 +90,18 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		liker.addAnswer("Ich habe verstanden, auf welches Ziel mein Gegenüber hinarbeiten wollte.");
 		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenarbeiten, damit alle am Ende mehr Gewinn haben.");
 		this.addQuestionnaireItem(liker);
+
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
+		liker.addAnswer("<span style='font-size:10px'>Bei meinen Preisentscheidungen während des Experiments bin ich den Empfehlungen des Algorithmus häufig gefolgt.");
+		liker.addSpace(1);
+		liker.addAnswer("<span style='font-size:10px'>Meine eigenen Preisentscheidungen waren geeignet, den größtmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("<span style='font-size:10px'>Die Preisempfehlungen des Algorithmus waren geeignet, den größmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("<span style='font-size:10px'>Ich glaube, dass die Empfehlungen des Algorithmus besser als meine eigenen Entscheidungen geeignet waren, um den größtmöglichen Gesamtgewinn zu erzielen.</span>");
+		liker.addAnswer("<span style='font-size:10px'>Ich glaube, dass meine eigenen Entscheidungen besser als die Empfehlungen des Algorithmus geeignet waren, um den größtmöglichen Gesamtgewinn zu erzielen.</span>");
+		liker.addSpace(5);
+		liker.addAnswer("<span style='font-size:10px'>Ich hatte hohes Vertrauen in die Empfehlungen des Algorithmus.");
+		this.addQuestionnaireItem(liker);
+
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
 		liker.addAnswer("Wählen Sie hier bitte den Wert \"5\" aus, um zu zeigen, dass Sie diese Aussage aufmerksam gelesen haben.");

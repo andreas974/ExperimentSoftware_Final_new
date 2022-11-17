@@ -6,9 +6,9 @@ import edu.kit.exp.client.gui.screens.question.quiz.QuizScreen;
 /**
  * Created by dschnurr on 22.10.14.
  */
-public class ContinuousCompetitionQuizRB2 extends QuizScreen {
+public class ContinuousCompetitionQuizHH2 extends QuizScreen {
 
-    public ContinuousCompetitionQuizRB2(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
+    public ContinuousCompetitionQuizHH2(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
         super(gameId, parameter, screenId, showUpTime);
 
         this.setTitleText("Fragen zur Anleitung");

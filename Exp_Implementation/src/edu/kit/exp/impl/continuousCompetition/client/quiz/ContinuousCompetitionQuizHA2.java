@@ -6,9 +6,9 @@ import edu.kit.exp.client.gui.screens.question.quiz.QuizScreen;
 /**
  * Created by dschnurr on 22.10.14.
  */
-public class ContinuousCompetitionQuizRB2_agent_DSS extends QuizScreen {
+public class ContinuousCompetitionQuizHA2 extends QuizScreen {
 
-    public ContinuousCompetitionQuizRB2_agent_DSS(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
+    public ContinuousCompetitionQuizHA2(String gameId, ParamObject parameter, String screenId, Long showUpTime) {
         super(gameId, parameter, screenId, showUpTime);
 
         this.setTitleText("Fragen zur Anleitung");
@@ -61,11 +61,6 @@ public class ContinuousCompetitionQuizRB2_agent_DSS extends QuizScreen {
         question.addAnswer("Der eingesetzte Algorithmus verhält sich rein zufällig unabhängig von meinem Verhalten.");
         question.addAnswer("Das Ziel des Algorithmus ist es, einen möglichst hohen Gewinn zu erzielen.", true);
         question.addAnswer("Der Algorithmus verfolgt unveränderliche Entscheidungsregeln basierend auf den gesetzten Preisen und Mengen.");
-        this.addQuizItem(question);
-
-        question = new QuizItemMultipleChoice("Ich erhalte zusätzlich Hinweise von einem Algorithmus, der mir einen Vorschlag für den zu setzenden Preis liefert.");
-        question.addAnswer("Wahr" ,true);
-        question.addAnswer("Falsch");
         this.addQuizItem(question);
 
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zur nachgefragten Menge Ihres Gutes sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
