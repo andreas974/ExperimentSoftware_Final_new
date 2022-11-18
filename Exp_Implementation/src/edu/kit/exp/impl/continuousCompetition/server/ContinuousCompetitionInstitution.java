@@ -584,8 +584,8 @@ public class ContinuousCompetitionInstitution extends Institution<ContinuousComp
             balanceFirmD = balanceFirmD + (profitFirmD / (30.0 * (1000.0/updateTimeStep) * 100.0));
         }
 
-        firmA.setPayoff(balanceFirmA);
-        firmB.setPayoff(balanceFirmB);
+        //firmA.setPayoff(balanceFirmA);
+        //firmB.setPayoff(balanceFirmB);
         if (isTriopolyTreatment || isQuadropolyTreatment) {firmC.setPayoff(balanceFirmC);}
         if (isQuadropolyTreatment) {firmD.setPayoff(balanceFirmD);}
 

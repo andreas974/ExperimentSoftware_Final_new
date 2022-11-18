@@ -20,9 +20,9 @@ public class ContinuousCompetitionInstitutionRB2DSS extends ContinuousCompetitio
         isCournotTreatment = false;
         isDiscreteTreatment = false;
         isDecisionSupport = true;
-        duration = 120000;
-        //duration = 1200000;
-        //duration = 1800000;
+        //duration = 120000;
+        //duration = 5000;
+        duration = 1800000;
         updateTimeStep = 500;
     }
 

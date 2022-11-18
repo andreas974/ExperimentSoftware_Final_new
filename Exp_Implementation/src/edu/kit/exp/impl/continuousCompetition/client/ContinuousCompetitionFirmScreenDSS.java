@@ -772,12 +772,22 @@ public class ContinuousCompetitionFirmScreenDSS extends Screen {
         // Update corresponding Q-matrix cell but only of current state
         /*q[state][action] = (1 - parameter.alpha) * q[state][action] + parameter.alpha * (reward + parameter.delta * nextMaxQ);
         //System.out.println("State: " + state + ", Action: " + action + ", Value: " + q[state][action]);*/
-
+        int myprice=0;
+        if (myRole==FirmDescription.FirmA){
+            myprice = marketUpdate.getaFirmA();
+        } else if (myRole==FirmDescription.FirmB) {
+            myprice = marketUpdate.getaFirmB();
+        }
         // Update Q-matrix cell but of maximum action
         if (marketUpdate.getCountId() > 1) {
 
-            if (getState(marketUpdate) == actionsofotherfirm[marketUpdate.getCountId() - 1]) {
+            /*if (getState(marketUpdate) == actionsofotherfirm[marketUpdate.getCountId() - 1]) {
                 q[state / 5][getMaxActionIndex(state)] = (1 - parameter.getAlpha()) * q[state / 5][getMaxActionIndex(state)] +
+                        parameter.getAlpha() * (((getMaxActionIndex(state) * 5) * (60 - 1.8 * (getMaxActionIndex(state) * 5) +
+                                1.2 * (state)) * 1.25) + parameter.getDelta() * nextMaxQ);
+            }*/
+            if (getState(marketUpdate) == actionsofotherfirm[marketUpdate.getCountId() - 1]) {
+                q[state / 5][myprice/5] = (1 - parameter.getAlpha()) * q[state / 5][myprice/5] +
                         parameter.getAlpha() * (((getMaxActionIndex(state) * 5) * (60 - 1.8 * (getMaxActionIndex(state) * 5) +
                                 1.2 * (state)) * 1.25) + parameter.getDelta() * nextMaxQ);
             }
