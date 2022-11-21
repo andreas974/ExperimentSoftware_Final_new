@@ -40,15 +40,15 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		this.addQuestionnaireItem(question);
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen zu Ihren Zielen während des Experiments zustimmen:");
-		liker.addAnswer("Mein Ziel war es, einen möglichst hohen Gesamtgewinn im Experiment zu erzielen.");
+		liker.addAnswer("Mein Ziel war es, einen möglichst hohen Gesamtgewinn zu erzielen.");
 		liker.addAnswer("Mein Ziel war es, besser als die andere Firma abzuschneiden.");
 		liker.addAnswer("Mein Ziel war es, mit der anderen Firma im Experiment zu kooperieren.");
 		this.addQuestionnaireItem(liker);
 
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen zu den Zielen der anderen Firma, mit der Sie im Experiment im Wettbewerb standen, zustimmen:");
-		liker.addAnswer("Das Ziel der anderen Firma war, besser als ich abzuschneiden.");
-		liker.addAnswer("Das Ziel der anderen Firma war, den höchstmöglichen Gesamtgewinn zu erzielen.");
-		liker.addAnswer("Das Ziel der anderen Firma war, mit mir zu kooperieren.");
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen zu den <u>Zielen der anderen Firma</u>, mit der Sie im Experiment im Wettbewerb standen, zustimmen:");
+		liker.addAnswer("Das Ziel der anderen Firma war es, den höchstmöglichen Gesamtgewinn zu erzielen.");
+		liker.addAnswer("Das Ziel der anderen Firma war es, besser als ich abzuschneiden.");
+		liker.addAnswer("Das Ziel der anderen Firma war es, mit mir zu kooperieren.");
 		this.addQuestionnaireItem(liker);
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br<b>Geben Sie an inwiefern Sie den folgenden Aussagen über sich selbst zustimmen.");
@@ -73,31 +73,31 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		liker.addAnswer("Ich mag es, gegen andere anzutreten.");
 		liker.addAnswer("Ich versuche oft, andere zu übertrumpfen.");
 		liker.addSpace(3);
-		liker.addAnswer("Ich bin jemand, der gerne gewinnt und es hasst zu verlieren.");
+		liker.addAnswer("Ich bin jemand, die/der gerne gewinnt und es hasst zu verlieren.");
 		liker.addAnswer("Ich fühle mich schlecht, wenn ich in einem Wettbewerb verliere.");
 		liker.addAnswer("Im Wettbewerb zu verlieren, hat kaum Auswirkungen auf mich.");
 		this.addQuestionnaireItem(liker);
 
-		QuestionnaireTextInput textInput = new QuestionnaireTextInput("Wie würden Sie Ihre Strategie in eigenen Worten beschreiben?");
+		QuestionnaireTextInput textInput = new QuestionnaireTextInput("Beschreiben Sie kurz in eigenen Worten Ihre Strategie während des Experiments.");
 		this.addQuestionnaireItem(textInput);
 
-		textInput = new QuestionnaireTextInput("Wie würden Sie die Strategie Ihres Gegenübers in eigenen Worten beschreiben?");
+		textInput = new QuestionnaireTextInput("Beschreiben Sie kurz in eigenen Worten die Strategie der anderen Firma während des Experiments.");
 		this.addQuestionnaireItem(textInput);
-
-		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
-		liker.addAnswer("Es fiel mir leicht mit der anderen Firma zusammenzuarbeiten.");
-		liker.addAnswer("Ich konnte zusammen mit der anderen Firma ein gemeinsames Ziel erreichen.");
-		liker.addSpace(2);
-		liker.addAnswer("Ich habe verstanden, auf welches Ziel mein Gegenüber hinarbeiten wollte.");
-		liker.addAnswer("Bei diesem Experiment sollte man mit anderen zusammenarbeiten, damit alle am Ende mehr Gewinn haben.");
-		this.addQuestionnaireItem(liker);
 
 		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
 		liker.addAnswer("Wählen Sie hier bitte den Wert \"5\" aus, um zu zeigen, dass Sie diese Aussage aufmerksam gelesen haben.");
 		liker.addAnswer("Wählen Sie hier bitte den Wert \"6\" aus, um zu zeigen, dass Sie diese Aussage aufmerksam gelesen haben.");
 		this.addQuestionnaireItem(liker);
 
-		semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenübers im Experiment empfand ich als...");
+		liker = new QuestionnaireLikert("<span style=\"font-weight:normal\">Bitte bewerten Sie auf einer Skala von 1 bis 7, wobei 1 für ''Ich stimme überhaupt nicht zu'' und 7 für ''Ich stimme vollkommen zu'' steht. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Geben Sie an inwiefern Sie den folgenden Aussagen zustimmen:");
+		liker.addAnswer("Es fiel mir leicht mit der anderen Firma zusammenzuarbeiten.");
+		liker.addAnswer("Ich konnte zusammen mit der anderen Firma ein gemeinsames Ziel erreichen.");
+		liker.addSpace(2);
+		liker.addAnswer("Ich habe verstanden, auf welches Ziel die andere Firma hinarbeiten wollte.");
+		liker.addAnswer("Bei diesem Experiment sollte man mit der anderen Firma zusammenarbeiten, damit am Ende alle mehr Gewinn erzielen.");
+		this.addQuestionnaireItem(liker);
+
+		semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten der anderen Firma im Experiment empfand ich als...");
 		Answers = new ArrayList<>();
 		//For each Construct add one line with "/"-seperator
 		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unklug/Klug");
