@@ -18,16 +18,32 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 		super(gameId, parameter, screenId, showUpTime);
 		this.setTitleText("Fragebogen");
 		this.setPreText("<html><center>Die zweite Phase des Experiments ist nun abgeschlossen.<br></b>Im Folgenden stellen wir Ihnen nun noch eine Reihe von Fragen. Bitte beantworten Sie diesen Fragebogen aufmerksam und vollständig.<br>Klicken Sie auf die Schaltfläche „Weiter“, um mit dem Fragebogen zu beginnen.</htmL>");
-		this.setPostText("Sie haben den Fragebogen erfolgreich abgeschlossen.<br>Klicken Sie \"Weiter\", um das Experiment zu beenden.");
+		this.setPostText("Sie haben den Fragebogen erfolgreich abgeschlossen.<br>Klicken Sie ''Weiter'', um das Experiment zu beenden.");
 		Random r = new Random();
 		ArrayList<String> Answers;
 		QuestionnaireLikert liker;
 		QuestionnaireSemantic semantic;
 
-
+		semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten der anderen Firma im Experiment empfand ich als...");
+		Answers = new ArrayList<>();
+		//For each Construct add one line with "/"-seperator
+		Answers.add("Unintelligent/Intelligent&Inkompetent/Kompetent&Unklug/Klug");
+		Answers.add("Unangenehm/Angenehm&Hart/Nett&Unerfreulich/Erfreulich");
+		Answers.add("Mechanisch/Kreativ&Starr/Lebendig&Künstlich/Menschlich");
+		Answers.add("Schwach/Stark&Gefügig/Dominant&Unsicher/Selbstbewusst");
+		Answers.add("Unzuverlässig/Zuverlässig&Nicht vertrauenswürdig/Vertrauenswürdig&Unverlässlich/Verlässlich");
+		while (Answers.size()>0){
+			int randomAnswer = r.nextInt(Answers.size());
+			String[] parts = Answers.get(randomAnswer).split("&");
+			for (int i = 0; i<parts.length; i++){
+				semantic.addAnswer(parts[i]);
+			}
+			Answers.remove(Answers.get(randomAnswer));
+		}
+		this.addQuestionnaireItem(semantic);
 
 		QuestionnaireMultipleChoice question;
-		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Experiment sind zutreffend? ");
+		question = new QuestionnaireMultipleChoice("Welche der folgenden Aussagen zum Experiment sind zutreffend?");
 		question.addAnswer("Die Firma, mit der ich während des Experiments im Wettbewerb stand, wurde von einem menschlichen Experimentteilnehmenden dargestellt.");
 		question.addAnswer("Die Firma, mit der ich während des Experiments im Wettbewerb stand, wurde von einem Computeralgorithmus dargestellt.");
 		question.addAnswer("Keine der oben angegebenen Antworten trifft zu.");
@@ -113,25 +129,6 @@ public class ContinuousCompetitionQuestionnaireCompetition extends Questionnaire
 			}
 			Answers.remove(Answers.get(randomAnswer));
 		}
-
-		/*semantic.addAnswer("Unintelligent/Intelligent");
-		semantic.addAnswer("Inkompetent/Kompetent");
-		semantic.addAnswer("Unwissend/Klug");
-		semantic.addAnswer("Unangenehm/Angenehm");
-		semantic.addAnswer("Hart/Nett");
-		semantic.addAnswer("Unerfreulich/Erfreulich");
-		semantic.addAnswer("Mechanisch/Kreativ");
-		semantic.addAnswer("Starr/Lebendig");
-		semantic.addAnswer("Künstlich/Menschlich");
-		//this.addQuestionnaireItem(semantic);
-
-		//semantic = new QuestionnaireSemantic("<span style=\"font-weight:normal\">Bitte bewerten Sie die folgende Aussage auf der Skala von 1 bis 7 mit den jeweiligen Endpunkten. Die Bewertungspunkte dazwischen stellen Abstufungen zwischen den beiden Endpunkten dar.</span><br><br><b>Das Verhalten meines Gegenüber im Experiment empfand ich als...");
-		semantic.addAnswer("Schwach/Stark");
-		semantic.addAnswer("Gefügig/Dominant");
-		semantic.addAnswer("Unsicher/Selbstbewusst");
-		semantic.addAnswer("Unverlässlich/Verlässlich");
-		semantic.addAnswer("Nicht vertrauenswürdig/Vertrauenswürdig");
-		semantic.addAnswer("Unzuverlässig/Zuverlässig");*/
 		this.addQuestionnaireItem(semantic);
 
 		question = new QuestionnaireMultipleChoice("Welches Geschlecht haben Sie?");

@@ -127,7 +127,7 @@ public class QuestionnaireSemantic extends QuestionnaireItem {
 		whiteline = BorderFactory.createLineBorder(Color.white);
 
 		JPanel test = new JPanel();
-		setComponentSize(test, 950, 700);
+		setComponentSize(test, 950, 600);
 		test.setBackground(Color.white);
 		test.setAutoscrolls(true);
 		scrollFrame = new JScrollPane(test);
