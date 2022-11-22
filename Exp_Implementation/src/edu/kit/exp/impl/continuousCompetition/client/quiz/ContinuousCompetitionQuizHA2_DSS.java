@@ -25,7 +25,7 @@ public class ContinuousCompetitionQuizHA2_DSS extends QuizScreen {
         question.addAnswer("4");
         this.addQuizItem(question);
 
-        question = new QuizItemMultipleChoice("Während der gesamten Zeit stehe ich mit den gleichen Firmen im Wettbewerb.");
+        question = new QuizItemMultipleChoice("Während der gesamten Zeit stehe ich mit der gleichen Firma im Wettbewerb.");
         question.addAnswer("Wahr", true);
         question.addAnswer("Falsch");
         this.addQuizItem(question);
@@ -50,7 +50,7 @@ public class ContinuousCompetitionQuizHA2_DSS extends QuizScreen {
         question.addAnswer("Falsch", true);
         this.addQuizItem(question);
 
-        question = new QuizItemMultipleChoice("Während der gesamten Zeit kann ich auf einen Vorschlag eines Algorithmus für meine Preisentscheidung zurückgreifen.");
+        question = new QuizItemMultipleChoice("Während des Experiments wird mir der Vorschlag eines Algorithmus für meine Preisentscheidung angezeigt.");
         question.addAnswer("Wahr", true);
         question.addAnswer("Falsch");
         this.addQuizItem(question);
@@ -58,20 +58,21 @@ public class ContinuousCompetitionQuizHA2_DSS extends QuizScreen {
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zu den im Wettbewerb stehenden Firmen sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
         question.addAnswer("Alle Firmen werden von menschlichen Teilnehmenden des Experiments dargestellt.");
         question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wird von einem Computeralgorithmus dargestellt.", true);
-        question.addAnswer("Welche Firma ich darstelle wird zu Beginn des Experiments zufällig bestimmt.", true);
+        question.addAnswer("Welche Firma ich darstelle, wird zu Beginn des Experiments zufällig bestimmt.", true);
         this.addQuizItem(question);
 
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zum Computeralgorithmus, der die Rolle einer Firma übernimmt, sind richtig? <br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
-        question.addAnswer("Der Algorithmus lernt während des Experiments in Abhängigkeit der gesetzten Preise und Mengen weiter dazu.", true);
+        question.addAnswer("Der Algorithmus lernt während des Experiments in Abhängigkeit der gesetzten Preise der Firmen und der nachgefragten Mengen weiter dazu.", true);
         question.addAnswer("Der eingesetzte Algorithmus verhält sich rein zufällig unabhängig von meinem Verhalten.");
         question.addAnswer("Das Ziel des Algorithmus ist es, einen möglichst hohen Gewinn zu erzielen.", true);
-        question.addAnswer("Der Algorithmus verfolgt unveränderliche Entscheidungsregeln basierend auf den gesetzten Preisen und Mengen.");
+        question.addAnswer("Der Algorithmus verfolgt unveränderliche Entscheidungsregeln basierend auf den gesetzten Preisen und nachgefragten Mengen.");
         this.addQuizItem(question);
 
-        question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zum Computeralgorithmus, der mir während des Experiments Preisempfehlungen liefert, sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
-        question.addAnswer("Die Preisvorschläge des Algorithmus sind rein zufällig.");
-        question.addAnswer("Die Preisvorschläge basieren auf den gesetzten Preisen und der nachgefragten Mengen.", true);
-        question.addAnswer("Der Algorithmus für die Preisempfehlungen verfolgt einen gewinnmaximierenden Ansatz.", true);
+        question = new QuizItemMultipleChoice("Welche der folgenden Aussagen sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
+        question.addAnswer("Während des gesamten Experiments werden mir Vorschläge für meine Preisentscheidung angezeigt.", true);
+        question.addAnswer("Die angezeigten Preisvorschläge stammen von einem Computeralgorithmus, der einen gewinnmaximierenden Ansatz verfolgt.", true);
+        question.addAnswer("Die angezeigten Preisvorschläge sind zufällig.");
+        question.addAnswer("Die angezeigten Preisvorschläge basieren auf den gesetzten Preisen der Firmen und den nachgefragten Mengen.", true);
         this.addQuizItem(question);
 
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zur nachgefragten Menge Ihres Gutes sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
