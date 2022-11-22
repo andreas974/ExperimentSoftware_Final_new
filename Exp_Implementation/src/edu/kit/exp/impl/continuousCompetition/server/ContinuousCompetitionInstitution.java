@@ -69,7 +69,6 @@ public class ContinuousCompetitionInstitution extends Institution<ContinuousComp
     protected double DSSfirmA;
     protected double DSSfirmB;
 
-
     protected double maxDSS;
     protected double balanceFirmA;
     protected double balanceFirmB;
@@ -469,7 +468,6 @@ public class ContinuousCompetitionInstitution extends Institution<ContinuousComp
                 trial.setSubject(subject);
             }
         }
-
         trial.setValueName("SRV_RCV_PRICE_UPDATE");
         trial.setValue(serverTime + "," + pu.getCountId() + "," + pu.getRoleCode()+ "," +
                         aFirmA + "," + aFirmB + "," + aFirmC + "," + aFirmD + "," + DSSfirmA + "," + DSSfirmB
@@ -584,8 +582,8 @@ public class ContinuousCompetitionInstitution extends Institution<ContinuousComp
             balanceFirmD = balanceFirmD + (profitFirmD / (30.0 * (1000.0/updateTimeStep) * 100.0));
         }
 
-        //firmA.setPayoff(balanceFirmA);
-        //firmB.setPayoff(balanceFirmB);
+        firmA.setPayoff(balanceFirmA);
+        firmB.setPayoff(balanceFirmB);
         if (isTriopolyTreatment || isQuadropolyTreatment) {firmC.setPayoff(balanceFirmC);}
         if (isQuadropolyTreatment) {firmD.setPayoff(balanceFirmD);}
 

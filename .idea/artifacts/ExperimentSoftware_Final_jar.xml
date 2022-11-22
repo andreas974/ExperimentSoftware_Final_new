@@ -41,7 +41,7 @@
       <element id="file-copy" path="$PROJECT_DIR$/config/start_server.bat" />
       <element id="file-copy" path="$PROJECT_DIR$/QMatrix_final_with1.0_FirmA.csv" />
       <element id="file-copy" path="$PROJECT_DIR$/QMatrix_final_with1.0_FirmB.csv" />
-      <element id="file-copy" path="$PROJECT_DIR$/exp.h2.db" />
+      <element id="file-copy" path="$PROJECT_DIR$/exp.h2.dbold" />
     </root>
   </artifact>
 </component>
