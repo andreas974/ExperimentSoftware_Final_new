@@ -604,10 +604,20 @@ public class AgentCoreWithGui extends AgentCore {
         profitFirmCUnitLabel.setVisible(false);
         profitFirmCValueLabel.setVisible(false);
 
+        profitFirmDDescriptionChartDisplayLabel.setVisible(false);
+        profitFirmDDescriptionLabel.setVisible(false);
+        profitFirmDUnitLabel.setVisible(false);
+        profitFirmDValueLabel.setVisible(false);
+
         pFirmCDescriptionDisplayLabel.setVisible(false);
         pFirmCDescriptionLabel.setVisible(false);
         pFirmCValueLabel.setVisible(false);
         pFirmCUnitLabel.setVisible(false);
+
+        pFirmDDescriptionDisplayLabel.setVisible(false);
+        pFirmDDescriptionLabel.setVisible(false);
+        pFirmDValueLabel.setVisible(false);
+        pFirmDUnitLabel.setVisible(false);
 
         qFirmCDescriptionDisplayLabel.setVisible(false);
         qFirmCDescriptionLabel.setVisible(false);
