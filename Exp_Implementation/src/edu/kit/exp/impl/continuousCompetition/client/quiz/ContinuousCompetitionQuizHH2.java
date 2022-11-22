@@ -25,7 +25,7 @@ public class ContinuousCompetitionQuizHH2 extends QuizScreen {
         question.addAnswer("4");
         this.addQuizItem(question);
 
-        question = new QuizItemMultipleChoice("Während der gesamten Zeit stehe ich mit den gleichen Firmen im Wettbewerb.");
+        question = new QuizItemMultipleChoice("Während der gesamten Zeit stehe ich mit der gleichen Firma im Wettbewerb.");
         question.addAnswer("Wahr", true);
         question.addAnswer("Falsch");
         this.addQuizItem(question);
@@ -53,7 +53,7 @@ public class ContinuousCompetitionQuizHH2 extends QuizScreen {
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zu den im Wettbewerb stehenden Firmen sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
         question.addAnswer("Alle Firmen werden von menschlichen Teilnehmenden des Experiments dargestellt.", true);
         question.addAnswer("Die Firma, mit der ich im Wettbewerb stehe, wird von einem Computeralgorithmus dargestellt.");
-        question.addAnswer("Welche Firma ich darstelle wird zu Beginn des Experiments zufällig bestimmt.", true);
+        question.addAnswer("Welche Firma ich darstelle, wird zu Beginn des Experiments zufällig bestimmt.", true);
         this.addQuizItem(question);
 
         question = new QuizItemMultipleChoice("Welche der folgenden Aussagen zur nachgefragten Menge Ihres Gutes sind richtig?<br><i>Hinweis: Es kann mehrere richtige Antworten geben.</i>");
